@@ -1,0 +1,115 @@
+K‰yttis:
+	- jakaa kovalevyn resursseja yhdelle tai useammalle prosessorille
+	- tarjoaa palveluita k‰ytt‰jille
+	- hallitsee (secondary) muistia ja I/O-laitteita
+K‰yttiksen peruselementit: prosessori, I/O-moduuli, p‰‰muisti, "systeemi bussi" = system bus
+
+SMP = Symmetric Multiprocessor = symmetrinen moniprosessorikone
+	-"stand-alone" tietokone systeemi joka
+		- kaksi tai useampi samantyylinen prosessori verrattavilla kapasiteeteilla
+		- prosessorit jakavat saman p‰‰muistin ja ovat yhdistetty v‰yl‰n tai muun sis‰isen rakenteen kautta
+		- jakavat p‰‰syn I/O-laitteisiin
+		- kaikki prosessorit voivat suorittaa samat funktiot
+		- systeemi‰ kontrolloi integroitu k‰yttˆj‰rjestelm‰ joka mahdollistaa yhteistyˆn prosessoreiden	ja 
+		  niiden ohjelmien v‰lill‰ (at the job, task, file and data element levels)
+
+Multicore Computer = moniytiminen tietokone
+	- tunnetaan myˆs "chip multiprocessor"
+	- yhdist‰‰ kaksi tai useamman prosessorin (cores) yhdelle silikonin palalle (die)
+		- jokainen kuori sis‰lt‰‰ yksitt‰isen prosessorin kaikki komponentit
+
+OS
+	- ohjelma joka kontrolloi sovellusohjelmien suoritusta
+	- rajapinta sovellusten ja kovalevyn v‰lill‰
+	- soveltuvuus, tehokkuus, kyky kehitty‰
+	- palveluja
+		- ohjelmistoymp‰ristˆ
+		- ohjelmien suoritus
+		- p‰‰sy I/O -laitteisiin
+		- kontrolloitu p‰‰sy tiedostoihin
+		- p‰‰sy systeemiin
+		- virhetilojen ehk‰isy ja reaktio
+		- kirjanpito
+
+OS ohjelmistona (software)
+	- yhdistelm‰ ohjelmia joita suoritetaan prosessorilla
+		- itsen‰iset prosessit, kutsuttavat aliohjelmat
+	- saa s‰‰nnˆllisesti kontrollinen (SVC, keskeytykset, CALL)
+	- s‰‰nnˆllisesti luovuttaa kontrollin sovelluksille
+		- IRET konek‰sky
+
+Multiprogramming eli multitasking
+	- muisti on laajennettu pit‰m‰‰n hallussa >=3 ohjelmaa ja vaihtamaan kaikkien niiden v‰lill‰
+
+Saavuttaakseen ja kontrolloidakseen prosessia OS:n t‰ytyy tiet‰‰:
+	- miss‰ prosessi sijaitsee
+	- prosessin attribuutit jotka ovat tarpeelliset sen suoritukselle/p‰‰sylle
+
+Yksikkˆ resurssin omistajuutta on nimelt‰‰n prosessi
+Vuoronanto/l‰hett‰minen yksikkˆ on nimelt‰‰n s‰ie
+Multithreading
+	- OS:n kyky tuke monia, samanaikaisia k‰skypolkuja yksitt‰isess‰ prosessissa
+Prosessi on
+	- yksikkˆ tai resurssien jako ja suojelun yksikkˆ
+	- virtuaalinen osoiteavaruus joka s‰ilytt‰‰ prosessin kuvan
+	- suojattu p‰‰sy prosessoriin, muihin prosesseihin, tiedostoihin ja I/O-l‰hteisiin
+
+Jokaisella s‰ikeell‰ on
+	- suoritustila (running, ready, etc)
+	- suojattu s‰ikeen tila kun ei ole ajossa
+	- suoritusjono
+	- jokaiselle s‰ikeelle oma staattinen varasto paikallisille muuttujille
+	- p‰‰sy muistiin ja sen prosessin resursseihin (all threads of a process share this)
+
+Prosessi voidaan ajatella yksis‰ikeisen‰.
+
+S‰ikeen edut:
+	- kest‰‰ v‰hemm‰n aikaa luoda uusi s‰ie kuin prosessi
+	- kest‰‰ v‰hemm‰n aikaa tuhota yksi s‰ie kuin prosessi
+	- nopeampi vaihtaa kahden s‰ikeen kuin kahden prosessin v‰lill‰
+	- s‰ikeet lis‰‰v‰t ohjelmien v‰lisen kommunikaation tehokkuutta
+K‰yttˆj‰rjestelm‰ss‰, joka tukee s‰ikeit‰, aikataulutus ja vuoronanto tehd‰‰n s‰ikeiden pohjalta
+
+K‰ytt‰j‰tason s‰ie (sovellus tai ohj.kielen kirjasto skeduloi)
+	- luodaan ja hallinnoidaan s‰iekirjastossa jota ajetaan prosessin k‰ytt‰j‰tilassa
+	- kaikki s‰ikeiden hallinnointi tehd‰‰n sovelluksesta
+	- kernel tiet‰‰ s‰ikeiden olemassaolosta
+	- max yksi s‰ie suorituksessa kerrallaan
+	-ULT:n edut
+		- s‰ikeiden v‰lill‰ vaihtaminen ei vaadi ytimen oikeuksia
+		- skedulointi voi olla sovelluskohtaista
+		- voidaan suorittaa kaikilla k‰yttiksill‰
+	- haitat
+		- kun yksi s‰ie blockataan (esim system call), kaikki s‰ikeet blockataan eli koko prosessi pys‰htyy
+		- monis‰ikeinen sovellus ei pysty hyˆdynt‰m‰‰n moniprosessointia
+KJ-tason s‰ikeet (KJ skeduloi)
+	- s‰ikeiden hallinointi tehd‰‰n kerneliss‰
+		- hallinnointia ei tehd‰ sovelluksessa (esim Windows)
+	- edut
+		- kernel voi samanaikaisesti skeduloida monia s‰ikeit‰ samasta prosessista useille prosessoreille
+		- jos yksi prosessin s‰ie blockataan, kernel voi skeduloida toisen s‰ikeen samasta prosessista
+		- kernelin rutiinit voivat olla monis‰ikeisi‰
+	-haitat
+		- kontrollin siirto s‰ikeelt‰ toiselle samassa prosessissa vaatii moodin vaihtamista kernelille
+Kriittinen vaihe/alue
+	- koodinp‰tk‰ jossa prosessi vaatii p‰‰sy‰ jaetuille resursseille ja ei saa olla suorituksessa toisen prosessin 		  ollessa koodin kriittisess‰ vaiheessa
+
+Lukkiutuminen
+	- tilanne, jossa >=2 prosessia eiv‰t voi edet‰ koska molemmat odottavat toisilta jotain tekoa (esim tulosta)
+
+
+Mutual exclusion = poissulkemisongelma
+	- vaatimus ett‰ yhden prosessin ollessa kriittisell‰ alueella jossa p‰‰st‰‰n jaetuille resursseille, toinen 	  prosessi ei voi olla kriittisell‰ alueella joka p‰‰see yhdellek‰‰n kyseisist‰ jaetuista resursseista
+
+Kilpailutilanne
+	- tilanne jossa usea s‰ie tai prosessi lukee ja kirjoittaa jaettua dataa ja lopputulos riippuu ajoj‰rjestyksest‰
+N‰lkiintyminen
+	- tilanne jossa ajettava prosessi on j‰‰ skeduloinnin ulkopuolelle: vaikka ajettavissa, ei saa vuoroa
+
+Semaphore
+	- integer arvo jota k‰ytet‰‰n prosessien v‰liseen viestint‰‰n
+	- vain kolme atomista operaatiota: m‰‰rit‰, kasvata semSignal, pienenn‰ semWait()
+	- pienent‰‰ operaatio voi seurata prosessin blokkaamisesta ja kasvaminen prosessin vapauttamisesta
+Monitori
+	- ohjelmointikielen rakenne joka kapseloi muuttujia, p‰‰st‰‰ proseduureja ja m‰‰ritt‰‰ koodia abstraktin datatyypin 	  kautta. Monitori muuttujaan voi p‰‰st‰ vain sen proseduurien kautta ja vain yksi prosessi voi k‰ytt‰‰ monitoria 	  aktiivisesti kerrallaan. Proseduurit ovat kriittisi‰ aluseita. Monitorilla voi olla jono prosesseja jotka 	  odottavat p‰‰sy‰
+
