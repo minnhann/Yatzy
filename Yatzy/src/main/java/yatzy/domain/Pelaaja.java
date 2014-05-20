@@ -1,14 +1,13 @@
-package yatzy.yatzy.domain;
+package yatzy.domain;
 
 import java.util.ArrayList;
-import yatzy.yatzy.domain.Noppa;
 
-public class Nopat {
+public class Pelaaja {
     
     private ArrayList<Noppa> nopat;
     
     
-    public Nopat(){
+    public Pelaaja(){
 
         this.nopat = new ArrayList<Noppa>();
         
@@ -25,4 +24,10 @@ public class Nopat {
         }
         return summa;
     }
+    
+    
+    
+    
+    
+
 }

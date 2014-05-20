@@ -1,4 +1,4 @@
-package yatzy.yatzy.domain;
+package yatzy.domain;
 
 import java.util.Random;
 
@@ -9,7 +9,7 @@ public class Noppa {
     private Random random = new Random();
 
     public Noppa() {
-        this.arvo = random.nextInt(6);
+        this.arvo = 1;
         this.heitot = 0;
 
     }
@@ -30,8 +30,13 @@ public class Noppa {
         if (this.heitot < 3) {
             return true;
         }
-        this.heitot = 0;
         return false;
+    }
+
+    public void heitaNoppaa() {
+        if (this.heitot < 3) {
+            this.arvo = random.nextInt(6) + 1;
+        }
     }
 
 }

@@ -1,4 +1,4 @@
-package yatzy.yatzy.peli;
+package yatzy.peli;
 
 /**
  *

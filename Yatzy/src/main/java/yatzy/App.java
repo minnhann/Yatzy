@@ -1,4 +1,4 @@
-package yatzy.yatzy;
+package yatzy;
 
 /**
  * Hello world!
