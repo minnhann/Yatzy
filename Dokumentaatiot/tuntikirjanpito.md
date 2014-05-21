@@ -5,3 +5,6 @@ Lauantai 10.5 klo 12-14
 
 Tiistai 13.5 klo 14-15
  - Pajassa Netbeansin ongelman selvitys (virhe pom.xml -tiedostossa) sek‰ loppujen    ensimm‰isen deadlinen teht‰vien tekoa: aihem‰‰rittely, tuntikirjanpidon aloitus ja    labtoolin luonti.
+
+Tiistai 20.5 klo 14-16
+- Pajassa ensimm‰isten luokkien sek‰ pakettien tekoa ja ohjelman rakenteen pohdintaa.
