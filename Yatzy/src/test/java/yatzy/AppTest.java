@@ -1,4 +1,4 @@
-package yatzy.yatzy;
+package yatzy;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
