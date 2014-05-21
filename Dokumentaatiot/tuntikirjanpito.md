@@ -20,16 +20,10 @@ Tiistai 13.5 klo 14-15
 
 
 Tiistai 20.5 klo 14-16
-
-
-- Pajassa ensimmäisten luokkien sekä pakettien tekoa ja ohjelman rakenteen pohdintaa.
-
-Tiistai 20.5 klo 14-16
-
 - Pajassa ohjelmoinnin aloitus: pakettien luonti sekä domain-pakettiin luokkien Noppa ja Nopat luonti.
 
+ Lisäksi ohjelman rakenteen pohdintaa.
 
+Keskiviikko 21.5 klo 22.10-22.40
 
-Keskiviikko 21.5 klo 22.10-22.30
-
-- Tiedostojen päivitys omalle koneelle, tuntikirjanpidon päivitys, testikansioiden luominen sekä lajittelu oikeisiin pakkauksiin.
+- Tiedostojen päivitys omalle koneelle, tuntikirjanpidon päivitys, testikansioiden luominen sekä lajittelu oikeisiin pakkauksiin. Pientä taistelua Git:n kanssa.
