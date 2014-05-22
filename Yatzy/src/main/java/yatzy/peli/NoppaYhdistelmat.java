@@ -51,7 +51,7 @@ public class NoppaYhdistelmat {
 
     public int yksiPari(Pelaaja pelaaja) {
 
-        for (int i = 6; i >= 0; i--) {
+        for (int i = 6; i >= 1; i--) {
             if (montakoSamaaNumeroa(pelaaja, i) >= 2) {
                 return i * 2;
             }
@@ -62,7 +62,7 @@ public class NoppaYhdistelmat {
     public int kaksiParia(Pelaaja pelaaja) {
         int parienMaara = 0;
         int summa = 0;
-        for (int i = 6; i >= 0; i--) {
+        for (int i = 6; i >= 1; i--) {
             if (montakoSamaaNumeroa(pelaaja, i) >= 2) {
                 if (parienMaara == 1) {
                     summa += 2 * i;
@@ -78,7 +78,7 @@ public class NoppaYhdistelmat {
     public int taysikasi(Pelaaja pelaaja) {
         int montakoLoydetty = 0;
         int summa = 0;
-        for (int i = 6; i >= 0; i--) {
+        for (int i = 6; i >= 1; i--) {
             if (montakoSamaaNumeroa(pelaaja, i) == 3) {
                 if (montakoLoydetty == 2) {
                     summa += 3 * i;
