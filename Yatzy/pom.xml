@@ -39,7 +39,9 @@
                 <configuration>
                     <instrumentation>
                         <includes>
-                            <include>yatzy.logiikka/*.class</include>
+                            <include>yatzy.domain/*.class</include>
+                            <include>yatzy.peli/*.class</include>
+                            <include>yatzy.gui/*.class</include>
                         </includes>
                     </instrumentation>
                 </configuration>
@@ -51,10 +53,14 @@
                 <version>0.30</version>
                 <configuration>
                     <targetClasses>
-                        <param>yatzy.logiikka.*</param>
+                        <param>yatzy.domain.*</param>
+                        <param>yatzy.peli.*</param>
+                        <param>yatzy.gui.*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>yatzy.logiikka.*</param>
+                        <param>yatzy.domain.*</param>
+                        <param>yatzy.peli.*</param>
+                        <param>yatzy.gui.*</param>
                     </targetTests>
                 </configuration>
             </plugin>
