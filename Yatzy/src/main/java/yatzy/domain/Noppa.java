@@ -22,9 +22,9 @@ public class Noppa {
         return heitot;
     }
 
-    public void lisaaHeitto() {
-        this.heitot++;
-    }
+//    public void lisaaHeitto() {
+//        this.heitot++;
+//    }
 
     public boolean onkoHeittojaJaljella() {
         if (this.heitot < 3) {
@@ -36,6 +36,7 @@ public class Noppa {
     public void heitaNoppaa() {
         if (this.heitot < 3) {
             this.arvo = random.nextInt(6) + 1;
+            this.heitot++;
         }
     }
 

@@ -12,29 +12,23 @@ import static org.junit.Assert.*;
  * @author minnhann
  */
 public class PelaajaTest {
-    
+
+    Pelaaja pelaaja;
+
     public PelaajaTest() {
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
+
     @Before
     public void setUp() {
+        pelaaja = new Pelaaja();
     }
-    
+
     @After
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-     @Test
-     public void hello() {}
+    @Test
+    public void konstruktoriLuoViisiNoppaa() {
+        assertEquals(5, pelaaja);
+    }
 }
