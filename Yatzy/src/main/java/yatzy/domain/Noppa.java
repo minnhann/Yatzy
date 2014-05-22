@@ -21,6 +21,10 @@ public class Noppa {
     public int getHeittoKerrat() {
         return heitot;
     }
+    
+    public void setArvo(int uusiArvo){
+        this.arvo = uusiArvo;
+    }
 
 //    public void lisaaHeitto() {
 //        this.heitot++;

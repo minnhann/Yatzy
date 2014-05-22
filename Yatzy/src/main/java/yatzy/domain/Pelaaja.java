@@ -1,10 +1,11 @@
 package yatzy.domain;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Pelaaja {
     
-    private ArrayList<Noppa> nopat;
+    public ArrayList<Noppa> nopat;
     
     
     public Pelaaja(){
@@ -19,10 +20,16 @@ public class Pelaaja {
     public int getNoppienSumma(){
         int summa = 0;
         
-        for(int i = 0; i < nopat.size(); i++){
-            summa += nopat.get(i).getArvo();
+        for(Noppa noppa : nopat){
+            summa += noppa.getArvo();
         }
         return summa;
+    }
+    
+    public void heitaNoppia(){
+        for(Noppa noppa : this.nopat){
+            noppa.heitaNoppaa();
+        }
     }
     
     

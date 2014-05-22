@@ -29,6 +29,8 @@ public class PelaajaTest {
 
     @Test
     public void konstruktoriLuoViisiNoppaa() {
-        assertEquals(5, pelaaja);
+        assertEquals(5, pelaaja.nopat.size());
     }
+    
+    
 }
