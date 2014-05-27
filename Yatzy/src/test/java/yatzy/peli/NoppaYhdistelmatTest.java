@@ -6,7 +6,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import yatzy.domain.Pelaaja;
+import yatzy.domain.Noppa;
+
 
 /**
  *
@@ -15,7 +16,8 @@ import yatzy.domain.Pelaaja;
 public class NoppaYhdistelmatTest {
 
     NoppaYhdistelmat yhdistelmat;
-    Pelaaja pelaaja;
+
+    Noppa[] nopat;
 
     public NoppaYhdistelmatTest() {
     }
@@ -23,7 +25,8 @@ public class NoppaYhdistelmatTest {
     @Before
     public void setUp() {
         yhdistelmat = new NoppaYhdistelmat();
-        pelaaja = new Pelaaja();
+
+        nopat = new Noppa[5];
 
     }
 
@@ -34,172 +37,172 @@ public class NoppaYhdistelmatTest {
     @Test
     public void laskeePienenSuoranOikein() {
         for (int i = 0; i < 5; i++) {
-            pelaaja.nopat.get(i).setArvo(i + 1);
+            nopat[i].setArvo(i + 1);
         }
-        assertEquals(15, yhdistelmat.pieniSuora(pelaaja));
+        assertEquals(15, yhdistelmat.pieniSuora(nopat));
     }
 
     @Test
     public void vaarillaLuvuillaPienenSuoranArvoksiNolla() {
         for (int i = 0; i < 5; i++) {
-            pelaaja.nopat.get(i).setArvo(1);
+            nopat[i].setArvo(1);
         }
 
-        assertEquals(0, yhdistelmat.pieniSuora(pelaaja));
+        assertEquals(0, yhdistelmat.pieniSuora(nopat));
     }
 
     @Test
     public void laskeeSuurenSuoranOikein() {
         for (int i = 0; i < 5; i++) {
-            pelaaja.nopat.get(i).setArvo(i + 2);
+            nopat[i].setArvo(i + 2);
         }
-        assertEquals(20, yhdistelmat.suuriSuora(pelaaja));
+        assertEquals(20, yhdistelmat.suuriSuora(nopat));
     }
 
     @Test
     public void vaarillaLuvuillaSuurenSuoranArvoksiNolla() {
         for (int i = 0; i < 5; i++) {
-            pelaaja.nopat.get(i).setArvo(1);
+            nopat[i].setArvo(1);
         }
 
-        assertEquals(0, yhdistelmat.suuriSuora(pelaaja));
+        assertEquals(0, yhdistelmat.suuriSuora(nopat));
     }
 
     @Test
     public void laskeeSamanNumeronMaaranOikein() {
         int maara = 0;
         for (int i = 0; i < 3; i++) {
-            pelaaja.nopat.get(i).setArvo(5);
+            nopat[i].setArvo(5);
             maara++;
         }
 
-        assertEquals(maara, yhdistelmat.montakoSamaaNumeroa(pelaaja, 5));
+        assertEquals(maara, yhdistelmat.montakoSamaaNumeroa(nopat, 5));
     }
 
     @Test
     public void loytaaYhdenParin() {
-        pelaaja.nopat.get(0).setArvo(6);
-        pelaaja.nopat.get(3).setArvo(6);
+        nopat[0].setArvo(6);
+        nopat[3].setArvo(6);
 
-        assertEquals(12, yhdistelmat.yksiPari(pelaaja));
+        assertEquals(12, yhdistelmat.yksiPari(nopat));
     }
 
     @Test
     public void loytaaYkkosParin() {
-        pelaaja.nopat.get(0).setArvo(1);
-        pelaaja.nopat.get(3).setArvo(1);
+        nopat[0].setArvo(1);
+        nopat[3].setArvo(1);
 
-        assertEquals(2, yhdistelmat.yksiPari(pelaaja));
+        assertEquals(2, yhdistelmat.yksiPari(nopat));
     }
 
     @Test
     public void josEiYhtaanPariaPalauttaaNollan() {
         for (int i = 0; i < 5; i++) {
-            pelaaja.nopat.get(i).setArvo(i + 1);
+            nopat[i].setArvo(i + 1);
         }
 
-        assertEquals(0, yhdistelmat.yksiPari(pelaaja));
+        assertEquals(0, yhdistelmat.yksiPari(nopat));
     }
 
     @Test
     public void loytaaKaksiParia() {
-        pelaaja.nopat.get(0).setArvo(2);
-        pelaaja.nopat.get(1).setArvo(3);
-        pelaaja.nopat.get(2).setArvo(3);
-        pelaaja.nopat.get(3).setArvo(2);
+        nopat[0].setArvo(2);
+        nopat[1].setArvo(3);
+        nopat[2].setArvo(3);
+        nopat[3].setArvo(2);
 
-        assertEquals(10, yhdistelmat.kaksiParia(pelaaja));
+        assertEquals(10, yhdistelmat.kaksiParia(nopat));
     }
 
     @Test
     public void loytaaYkkosJaKuutosParin() {
-        pelaaja.nopat.get(0).setArvo(1);
-        pelaaja.nopat.get(1).setArvo(6);
-        pelaaja.nopat.get(2).setArvo(1);
-        pelaaja.nopat.get(3).setArvo(6);
+        nopat[0].setArvo(1);
+        nopat[1].setArvo(6);
+        nopat[2].setArvo(1);
+        nopat[3].setArvo(6);
 
-        assertEquals(14, yhdistelmat.kaksiParia(pelaaja));
+        assertEquals(14, yhdistelmat.kaksiParia(nopat));
     }
 
     @Test
     public void josEiKahtaPariaPalauttaaNollan() {
         for (int i = 0; i < 5; i++) {
-            pelaaja.nopat.get(i).setArvo(i + 1);
+            nopat[i].setArvo(i + 1);
         }
 
-        assertEquals(0, yhdistelmat.kaksiParia(pelaaja));
+        assertEquals(0, yhdistelmat.kaksiParia(nopat));
     }
 
     @Test
     public void loytaaTaydenKaden() {
         for (int i = 0; i < 3; i++) {
-            pelaaja.nopat.get(i).setArvo(4);
+            nopat[i].setArvo(4);
         }
-        pelaaja.nopat.get(3).setArvo(3);
-        pelaaja.nopat.get(4).setArvo(3);
+        nopat[3].setArvo(3);
+        nopat[4].setArvo(3);
 
-        assertEquals(18, yhdistelmat.taysikasi(pelaaja));
+        assertEquals(18, yhdistelmat.taysikasi(nopat));
     }
 
     @Test
     public void loytaaYkkosJaKuutosTaydenKaden() {
         for (int i = 0; i < 3; i++) {
-            pelaaja.nopat.get(i).setArvo(1);
+            nopat[i].setArvo(1);
         }
-        pelaaja.nopat.get(3).setArvo(6);
-        pelaaja.nopat.get(4).setArvo(6);
+        nopat[3].setArvo(6);
+        nopat[4].setArvo(6);
 
-        assertEquals(15, yhdistelmat.taysikasi(pelaaja));
+        assertEquals(15, yhdistelmat.taysikasi(nopat));
     }
 
     @Test
     public void josEiTayttaKattaPalauttaaNollan() {
         for (int i = 0; i < 5; i++) {
-            pelaaja.nopat.get(i).setArvo(1);
+            nopat[i].setArvo(1);
         }
 
-        assertEquals(0, yhdistelmat.taysikasi(pelaaja));
+        assertEquals(0, yhdistelmat.taysikasi(nopat));
     }
 
     @Test
     public void josLoydettyKaksiLaskeeTaydenKadenOikein() {
-        pelaaja.nopat.get(4).setArvo(6);
-        pelaaja.nopat.get(3).setArvo(6);
-        pelaaja.nopat.get(2).setArvo(2);
-        pelaaja.nopat.get(1).setArvo(2);
-        pelaaja.nopat.get(0).setArvo(2);
+        nopat[4].setArvo(6);
+        nopat[3].setArvo(6);
+        nopat[2].setArvo(2);
+        nopat[1].setArvo(2);
+        nopat[0].setArvo(2);
         
-        assertEquals(18, yhdistelmat.taysikasi(pelaaja));
+        assertEquals(18, yhdistelmat.taysikasi(nopat));
     }
 
     @Test
     public void loytaaYatzyn() {
         for (int i = 0; i < 5; i++) {
-            pelaaja.nopat.get(i).setArvo(3);
+            nopat[i].setArvo(3);
         }
 
-        assertEquals(50, yhdistelmat.yatzy(pelaaja));
+        assertEquals(50, yhdistelmat.yatzy(nopat));
     }
 
     @Test
     public void josEiYatzyaPalauttaaNollan() {
         for (int i = 0; i < 4; i++) {
-            pelaaja.nopat.get(i).setArvo(3);
+            nopat[i].setArvo(3);
         }
-        pelaaja.nopat.get(4).setArvo(2);
+        nopat[4].setArvo(2);
 
-        assertEquals(0, yhdistelmat.yatzy(pelaaja));
+        assertEquals(0, yhdistelmat.yatzy(nopat));
     }
 
     @Test
     public void laskeeSattumanSummanOikein() {
         for (int i = 0; i < 3; i++) {
-            pelaaja.nopat.get(i).setArvo(1);
+            nopat[i].setArvo(1);
         }
-        pelaaja.nopat.get(3).setArvo(5);
-        pelaaja.nopat.get(4).setArvo(2);
+        nopat[3].setArvo(5);
+        nopat[4].setArvo(2);
 
-        assertEquals(10, yhdistelmat.sattuma(pelaaja));
+        assertEquals(10, yhdistelmat.sattuma(nopat));
     }
 
 }

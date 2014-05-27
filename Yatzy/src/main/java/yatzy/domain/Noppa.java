@@ -5,12 +5,12 @@ import java.util.Random;
 public class Noppa {
 
     private int arvo;
-    private int heitot;
     private Random random = new Random();
+    private boolean lukittu;
 
     public Noppa() {
         this.arvo = random.nextInt(6) + 1;
-//        this.heitot = 0;
+        this.lukittu = false;
 
     }
 
@@ -18,30 +18,15 @@ public class Noppa {
         return arvo;
     }
 
-//    public int getHeittoKerrat() {
-//        return heitot;
-//    }
-    
-    public void setArvo(int uusiArvo){
+    public void setArvo(int uusiArvo) {
         this.arvo = uusiArvo;
     }
 
-//    public void lisaaHeitto() {
-//        this.heitot++;
-//    }
-
-//    public boolean onkoHeittojaJaljella() {
-//        if (this.heitot < 3) {
-//            return true;
-//        }
-//        return false;
-//    }
-//
     public void heitaNoppaa() {
-        if (this.heitot < 3) {
-            this.arvo = random.nextInt(6) + 1;
-//            this.heitot++;
+        if (this.lukittu) {
+            return;
         }
+        this.arvo = random.nextInt(6) + 1;
     }
-
 }
+
