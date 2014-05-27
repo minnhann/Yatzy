@@ -11,9 +11,9 @@ import static org.junit.Assert.*;
  *
  * @author Minna
  */
-public class YatzyTest {
+public class PeliTest {
     
-    public YatzyTest() {
+    public PeliTest() {
     }
     
     @BeforeClass

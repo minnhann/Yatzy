@@ -33,39 +33,39 @@ public class NoppaTest {
         assertEquals(1, noppa.getArvo());
     }
 
-    @Test
-    public void konstruktoriAsettaaHeitotOikein() {
-        assertEquals(0, noppa.getHeittoKerrat());
-    }
+//    @Test
+//    public void konstruktoriAsettaaHeitotOikein() {
+//        assertEquals(0, noppa.getHeittoKerrat());
+//    }
+//
+//    @Test
+//    public void heittojenMaaraKasvaaHeitettaessa() {
+//        noppa.heitaNoppaa();
+//        assertEquals(1, noppa.getHeittoKerrat());
+//    }
 
-    @Test
-    public void heittojenMaaraKasvaaHeitettaessa() {
-        noppa.heitaNoppaa();
-        assertEquals(1, noppa.getHeittoKerrat());
-    }
+//    @Test
+//    public void heittojenMaaraEiKasvaYliKolmen() {
+//        noppa.heitaNoppaa();
+//        noppa.heitaNoppaa();
+//        noppa.heitaNoppaa();
+//        noppa.heitaNoppaa();
+//
+//        assertEquals(3, noppa.getHeittoKerrat());
+//    }
+//
+//    @Test
+//    public void alussaHeittojaOnJaljella() {
+//        assertEquals(true, noppa.onkoHeittojaJaljella());
+//    }
 
-    @Test
-    public void heittojenMaaraEiKasvaYliKolmen() {
-        noppa.heitaNoppaa();
-        noppa.heitaNoppaa();
-        noppa.heitaNoppaa();
-        noppa.heitaNoppaa();
-
-        assertEquals(3, noppa.getHeittoKerrat());
-    }
-
-    @Test
-    public void alussaHeittojaOnJaljella() {
-        assertEquals(true, noppa.onkoHeittojaJaljella());
-    }
-
-    @Test
-    public void kolmenHeitonJalkeenHeittojaEiOleJaljella() {
-        noppa.heitaNoppaa();
-        noppa.heitaNoppaa();
-        noppa.heitaNoppaa();
-        noppa.heitaNoppaa();
-
-        assertEquals(false, noppa.onkoHeittojaJaljella());
-    }
+//    @Test
+//    public void kolmenHeitonJalkeenHeittojaEiOleJaljella() {
+//        noppa.heitaNoppaa();
+//        noppa.heitaNoppaa();
+//        noppa.heitaNoppaa();
+//        noppa.heitaNoppaa();
+//
+//        assertEquals(false, noppa.onkoHeittojaJaljella());
+//    }
 }

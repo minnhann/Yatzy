@@ -9,8 +9,8 @@ public class Noppa {
     private Random random = new Random();
 
     public Noppa() {
-        this.arvo = 1;
-        this.heitot = 0;
+        this.arvo = random.nextInt(6) + 1;
+//        this.heitot = 0;
 
     }
 
@@ -18,9 +18,9 @@ public class Noppa {
         return arvo;
     }
 
-    public int getHeittoKerrat() {
-        return heitot;
-    }
+//    public int getHeittoKerrat() {
+//        return heitot;
+//    }
     
     public void setArvo(int uusiArvo){
         this.arvo = uusiArvo;
@@ -30,17 +30,17 @@ public class Noppa {
 //        this.heitot++;
 //    }
 
-    public boolean onkoHeittojaJaljella() {
-        if (this.heitot < 3) {
-            return true;
-        }
-        return false;
-    }
-
+//    public boolean onkoHeittojaJaljella() {
+//        if (this.heitot < 3) {
+//            return true;
+//        }
+//        return false;
+//    }
+//
     public void heitaNoppaa() {
         if (this.heitot < 3) {
             this.arvo = random.nextInt(6) + 1;
-            this.heitot++;
+//            this.heitot++;
         }
     }
 
