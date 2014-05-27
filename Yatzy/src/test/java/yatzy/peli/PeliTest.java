@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
  * @author Minna
  */
 public class PeliTest {
+    Peli peli;
     
     public PeliTest() {
     }
@@ -26,15 +27,20 @@ public class PeliTest {
     
     @Before
     public void setUp() {
+        peli = new Peli(1);
     }
     
     @After
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void konstruktoriLuoAlussaViisiNoppaa(){
+        assertEquals(5, peli.nopat.length);        
+    }
+    
+    @Test
+    public void konstruktoriLuoAlussaPelaajan(){
+        assertEquals(1, peli.pelaajat.size());
+    }
 }

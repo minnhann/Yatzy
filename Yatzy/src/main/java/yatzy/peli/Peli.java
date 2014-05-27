@@ -11,8 +11,8 @@ import yatzy.domain.Pelaaja;
 public class Peli {
 
     private NoppaYhdistelmat yhdistelmat;
-    private Noppa[] nopat;
-    private ArrayList<Pelaaja> pelaajat;
+    public Noppa[] nopat;
+    public ArrayList<Pelaaja> pelaajat; //miten privatella testit toimimaan
     private int vuoro;
     private int heitot;
 
