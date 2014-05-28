@@ -20,17 +20,17 @@ public class PelaajaTest {
 
     @Before
     public void setUp() {
-//        pelaaja = new Pelaaja();
+        pelaaja = new Pelaaja("pelaaja");
     }
 
     @After
     public void tearDown() {
     }
 
-//    @Test
-//    public void konstruktoriLuoViisiNoppaa() {
-//        assertEquals(5, pelaaja.nopat.size());
-//    }
+    @Test
+    public void konstruktoriAsettaaAlussaPisteetNollaksi() {
+        assertEquals(0, pelaaja.getPisteet());
+    }
     
     
 }

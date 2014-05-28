@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Pelaaja {
     
     private String nimi;
-    public int pisteet;
+    private int pisteet;
     
     
     public Pelaaja(String nimi){ 
@@ -14,7 +14,17 @@ public class Pelaaja {
 
     }
     
+    public String getNimi(){
+        return this.nimi;
+    }
     
+    public int getPisteet(){
+        return this.pisteet;
+    }
+    
+    public void lisaaPisteita(int lisays){
+        this.pisteet += lisays;
+    }
 
   
     

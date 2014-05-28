@@ -23,7 +23,7 @@ public class AlunKayttoliittyma implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Yatzy");
-        frame.setPreferredSize(new Dimension(400, 200));
+        frame.setPreferredSize(new Dimension(600, 300));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         luoKomponentit(frame.getContentPane());
@@ -37,6 +37,8 @@ public class AlunKayttoliittyma implements Runnable {
         container.setLayout(layout);
         JTextArea teksti = new JTextArea("Tervetuloa pelaamaan Yatzya!"
                 + "\n Valitse kuinka monta pelaajaa (1-4)");
+        teksti.setEditable(false);
+        teksti.setSize(50, 1);
         container.add(teksti);
 
         AlunValikko valikko = new AlunValikko(new ValikonKuuntelija());

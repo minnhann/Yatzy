@@ -27,6 +27,10 @@ public class NoppaYhdistelmatTest {
         yhdistelmat = new NoppaYhdistelmat();
 
         nopat = new Noppa[5];
+        
+        for (int i = 0; i < nopat.length; i++) {
+            nopat[i] = new Noppa();            
+        }
 
     }
 

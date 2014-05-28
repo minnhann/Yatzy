@@ -32,5 +32,9 @@ public class Noppa {
     public boolean onkoLukittu(){
         return this.lukittu;
     }
+    
+    public void lukitseNoppa(){
+        this.lukittu = true;
+    }
 }
 

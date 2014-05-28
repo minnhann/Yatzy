@@ -12,17 +12,16 @@ public class Peli {
 
     private NoppaYhdistelmat yhdistelmat;
     public Noppa[] nopat;
-    public ArrayList<Pelaaja> pelaajat; //miten privatella testit toimimaan
+    public ArrayList<Pelaaja> pelaajat;
     private int vuoro;
     private int heitot;
 
-    public Peli(int lkm) {
+    public Peli() {
         yhdistelmat = new NoppaYhdistelmat();
         nopat = new Noppa[5];
         this.luoNopat();
         pelaajat = new ArrayList<Pelaaja>();
-        this.luoPelaajat(lkm);
-        this.vuoro = 0;
+        this.vuoro = 1;
         this.heitot = 0; //tarkista lopuksi, onko heitot alussa 0 vai 1!!
 
     }
@@ -33,11 +32,12 @@ public class Peli {
         }
 
     }
-    private void luoPelaajat(int lkm){
+    public void luoPelaajat(int lkm){
         for(int i = 0; i < lkm; i++){
-            pelaajat.add(new Pelaaja("pelaaja"));
+            pelaajat.add(new Pelaaja("pelaaja" + (i+1)));
         }
     }
+    
 
     public void heitaNoppia() {
         if(heitot == 3){
@@ -50,9 +50,25 @@ public class Peli {
         heitot++;
     }
     
-    private void vaihdaVuoroa(){
-        this.vuoro = (this.vuoro + 1) % pelaajat.size();
+    public void vaihdaVuoroa(){
+        this.vuoro = (this.vuoro + 1) % (pelaajat.size() + 1);
         this.heitot = 0;
+    }
+    
+    public int getHeitot(){
+        return this.heitot;
+    }
+    
+    public int getVuoro(){
+        return this.vuoro;
+    }
+    
+    public void kasvataPelaajanPisteita(Pelaaja pelaajanNimi, int lisays){
+        for(Pelaaja pelaaja : pelaajat){
+            if(pelaaja.equals(pelaajanNimi)){
+                pelaaja.lisaaPisteita(lisays);
+            }
+        }
     }
 
 

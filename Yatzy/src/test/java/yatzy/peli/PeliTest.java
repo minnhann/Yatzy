@@ -27,7 +27,8 @@ public class PeliTest {
     
     @Before
     public void setUp() {
-        peli = new Peli(1);
+        peli = new Peli();
+        peli.luoPelaajat(2);
     }
     
     @After
@@ -40,7 +41,57 @@ public class PeliTest {
     }
     
     @Test
-    public void konstruktoriLuoAlussaPelaajan(){
-        assertEquals(1, peli.pelaajat.size());
+    public void luoOikeanMaaranPelaajiaPelaajat(){
+        assertEquals(2, peli.pelaajat.size());
     }
+    
+    @Test
+    public void alussaHeitotNolla(){
+        assertEquals(0, peli.getHeitot());
+    }
+    
+    @Test
+    public void alussaVuoroEnsimmaisellaPelaajalla(){
+        assertEquals(1, peli.getVuoro());
+    }
+    
+    @Test
+    public void kunHeitetaanNoppiaHeittojenMaaraKasvaa(){
+        peli.heitaNoppia();
+        
+        assertEquals(1, peli.getHeitot());
+    }
+    
+    @Test
+    public void vuoronVaihtuessaHeitotNollautuu(){
+        peli.vaihdaVuoroa();
+        
+        assertEquals(0, peli.getHeitot());
+    }
+    
+    @Test
+    public void vuoroVaihtuuSeuraavallePelaajalle(){
+        peli.vaihdaVuoroa();
+        
+        assertEquals(2, peli.getVuoro());
+        
+    }
+    
+    @Test
+    public void eiHeitaNoppiaJosHeitettyJoKolmesti(){
+        peli.heitaNoppia();
+        peli.heitaNoppia();
+        peli.heitaNoppia();
+        peli.heitaNoppia();
+        
+        assertEquals(3, peli.getHeitot());
+    }
+    
+    @Test
+    public void pelaajanPisteetKasvavatMetodiaKutsuttaessa(){
+        peli.kasvataPelaajanPisteita(peli.pelaajat.get(1), 3);
+        
+        assertEquals(3, peli.pelaajat.get(1).getPisteet());
+    }
+
 }
