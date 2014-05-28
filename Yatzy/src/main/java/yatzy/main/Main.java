@@ -12,7 +12,7 @@ public class Main {
     
     public static void main (String[] args){
         Peli yatzy = new Peli();
-        AlunKayttoliittyma ekaKayttis = new AlunKayttoliittyma();
+        AlunKayttoliittyma ekaKayttis = new AlunKayttoliittyma(yatzy);
         
         SwingUtilities.invokeLater(ekaKayttis);
     }

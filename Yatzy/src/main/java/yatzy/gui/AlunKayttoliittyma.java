@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package yatzy.gui;
 
 import java.awt.Container;
@@ -11,6 +6,7 @@ import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
+import yatzy.peli.Peli;
 
 /**
  *
@@ -19,6 +15,11 @@ import javax.swing.WindowConstants;
 public class AlunKayttoliittyma implements Runnable {
 
     private JFrame frame;
+    private Peli peli;
+    
+    public AlunKayttoliittyma(Peli yatzy){
+        this.peli = yatzy;
+    }
 
     @Override
     public void run() {
@@ -38,15 +39,14 @@ public class AlunKayttoliittyma implements Runnable {
         JTextArea teksti = new JTextArea("Tervetuloa pelaamaan Yatzya!"
                 + "\n Valitse kuinka monta pelaajaa (1-4)");
         teksti.setEditable(false);
-        teksti.setSize(50, 1);
         container.add(teksti);
 
-        AlunValikko valikko = new AlunValikko(new ValikonKuuntelija());
+        AlunValikko valikko = new AlunValikko(new ValikonKuuntelija(this.peli), this.peli);
 
         container.add(valikko);
     }
-    
-    public JFrame getFrame(){
+
+    public JFrame getFrame() {
         return frame;
     }
 

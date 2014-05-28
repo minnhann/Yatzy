@@ -8,7 +8,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import yatzy.domain.Noppa;
 
-
 /**
  *
  * @author minnhann
@@ -27,9 +26,9 @@ public class NoppaYhdistelmatTest {
         yhdistelmat = new NoppaYhdistelmat();
 
         nopat = new Noppa[5];
-        
+
         for (int i = 0; i < nopat.length; i++) {
-            nopat[i] = new Noppa();            
+            nopat[i] = new Noppa();
         }
 
     }
@@ -79,6 +78,8 @@ public class NoppaYhdistelmatTest {
             nopat[i].setArvo(5);
             maara++;
         }
+        nopat[3].setArvo(2);
+        nopat[4].setArvo(1);
 
         assertEquals(maara, yhdistelmat.montakoSamaaNumeroa(nopat, 5));
     }
@@ -87,6 +88,9 @@ public class NoppaYhdistelmatTest {
     public void loytaaYhdenParin() {
         nopat[0].setArvo(6);
         nopat[3].setArvo(6);
+        nopat[1].setArvo(3);
+        nopat[2].setArvo(4);
+        nopat[4].setArvo(5);
 
         assertEquals(12, yhdistelmat.yksiPari(nopat));
     }
@@ -95,6 +99,9 @@ public class NoppaYhdistelmatTest {
     public void loytaaYkkosParin() {
         nopat[0].setArvo(1);
         nopat[3].setArvo(1);
+        nopat[1].setArvo(3);
+        nopat[2].setArvo(4);
+        nopat[4].setArvo(5);
 
         assertEquals(2, yhdistelmat.yksiPari(nopat));
     }
@@ -175,7 +182,7 @@ public class NoppaYhdistelmatTest {
         nopat[2].setArvo(2);
         nopat[1].setArvo(2);
         nopat[0].setArvo(2);
-        
+
         assertEquals(18, yhdistelmat.taysikasi(nopat));
     }
 

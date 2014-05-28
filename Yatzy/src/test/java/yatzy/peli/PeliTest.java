@@ -93,5 +93,12 @@ public class PeliTest {
         
         assertEquals(3, peli.pelaajat.get(1).getPisteet());
     }
+    
+    @Test
+    public void luoPelaajatNimeaaOikein(){
+        peli.luoPelaajat(1);
+        
+        assertEquals("pelaaja1", peli.pelaajat.get(0).getNimi());
+    }
 
 }

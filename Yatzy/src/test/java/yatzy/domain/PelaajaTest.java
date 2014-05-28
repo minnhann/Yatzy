@@ -31,6 +31,35 @@ public class PelaajaTest {
     public void konstruktoriAsettaaAlussaPisteetNollaksi() {
         assertEquals(0, pelaaja.getPisteet());
     }
+
+    @Test
+    public void pisteidenLisaysToimiiOikein() {
+        pelaaja.lisaaPisteita(1);
+
+        assertEquals(1, pelaaja.getPisteet());
+    }
+
+    @Test
+    public void negatiivistenPisteidenLisaysAlussaEiOnnistu() {
+        pelaaja.lisaaPisteita(-5);
+
+        assertEquals(0, pelaaja.getPisteet());
+    }
+
+    @Test
+    public void nollanLisaysEiMuutaPisteita() {
+        pelaaja.lisaaPisteita(1);
+        pelaaja.lisaaPisteita(0);
+
+        assertEquals(1, pelaaja.getPisteet());
+    }
     
-    
+    @Test
+    public void negatiivistenPisteidenLisaysEiVahennaPisteita(){
+        pelaaja.lisaaPisteita(5);
+        pelaaja.lisaaPisteita(-3);
+        
+        assertEquals(5, pelaaja.getPisteet());
+    }
+
 }

@@ -41,7 +41,6 @@
                         <includes>
                             <include>yatzy.domain/*.class</include>
                             <include>yatzy.peli/*.class</include>
-                            <include>yatzy.gui/*.class</include>
                         </includes>
                     </instrumentation>
                 </configuration>
@@ -55,12 +54,10 @@
                     <targetClasses>
                         <param>yatzy.domain.*</param>
                         <param>yatzy.peli.*</param>
-                        <param>yatzy.gui.*</param>
                     </targetClasses>
                     <targetTests>
                         <param>yatzy.domain.*</param>
                         <param>yatzy.peli.*</param>
-                        <param>yatzy.gui.*</param>
                     </targetTests>
                 </configuration>
             </plugin>
