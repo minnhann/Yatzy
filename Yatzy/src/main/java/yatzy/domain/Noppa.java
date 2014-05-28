@@ -28,5 +28,9 @@ public class Noppa {
         }
         this.arvo = random.nextInt(6) + 1;
     }
+    
+    public boolean onkoLukittu(){
+        return this.lukittu;
+    }
 }
 
