@@ -34,5 +34,8 @@ Torstai 22.5 klo 12.30-16.10
 Torstai 22.5 klo 21.40-22.20
 - Määrittelyvaiheen luokkakaavion piirtäminen ja tallennus dokumentaatioihin.
 
-Tiistai 27.5 klo 12.40-14.40
+Tiistai 27.5 klo 13.40-15.40
 - Ohjelman rakenteen muokkausta: Peli -luokan metodien ja merkityksen tekoa, uudet luokat (alun käyttöliittymä ja -valikko, kuuntelija), Pelaaja -luokan metodien siirto Peli -luokkaan. Pelaaja -luokan merkitys vielä auki: tallettaa pisteitä ja mahdollisesti nimen, onko muuta?
+
+Keskiviikko 28.5 klo 13.30-16.10
+- Testien täydennystä, muuttuneiden luokkien täydennystä. Erityisesti Peli -luokan rakennusta ja sen testien korjaus nykyistä tilannetta vastaavaksi. Pit -raportin avulla testien korjausta. Lisäksi Main -luokan luonti ja ensimmäisen käyttöliittymän testausta, toimii.
