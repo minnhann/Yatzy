@@ -42,3 +42,6 @@ Keskiviikko 28.5 klo 13.30-16.10
 
 Keskiviikko 28.5 klo 18.50-19.00
 - Tuntikirjanpidon päivitys.
+
+Torstai 29.5 klo 18.30-19.30
+- Ohjelmistotuotannon menetelmien kertausta ja uuden luokkakaavion tekeminen.
