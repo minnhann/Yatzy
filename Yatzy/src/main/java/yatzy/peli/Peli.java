@@ -34,7 +34,7 @@ public class Peli {
     }
     public void luoPelaajat(int lkm){
         for(int i = 0; i < lkm; i++){
-            pelaajat.add(new Pelaaja("pelaaja" + (i+1)));
+            pelaajat.add(new Pelaaja("Pelaaja" + (i+1)));
         }
     }
     
