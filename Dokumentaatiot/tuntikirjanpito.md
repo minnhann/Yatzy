@@ -45,3 +45,6 @@ Keskiviikko 28.5 klo 18.50-19.00
 
 Torstai 29.5 klo 18.30-19.30
 - Ohjelmistotuotannon menetelmien kertausta ja uuden luokkakaavion tekeminen.
+
+Perjantai 30.5 klo 12.20-13.25
+- Koodikatselmoinnin tekeminen: toisen koodin lataaminen omalle koneelle, aiheeseen tutustuminen, koodiin perehtyminen ja palautteen kirjaaminen.
