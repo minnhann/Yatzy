@@ -48,3 +48,6 @@ Torstai 29.5 klo 18.30-19.30
 
 Perjantai 30.5 klo 12.20-13.25
 - Koodikatselmoinnin tekeminen: toisen koodin lataaminen omalle koneelle, aiheeseen tutustuminen, koodiin perehtyminen ja palautteen kirjaaminen.
+
+Maanantai 2.6 klo 20.10-20.41
+- Noppien piirtäminen ja repositorioon lataaminen.
