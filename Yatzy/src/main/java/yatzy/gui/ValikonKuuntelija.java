@@ -2,6 +2,7 @@ package yatzy.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.SwingUtilities;
 import yatzy.peli.Peli;
 
 /**
@@ -20,11 +21,9 @@ public class ValikonKuuntelija implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         int pelaajat = Integer.parseInt(e.getActionCommand());
         this.peli.luoPelaajat(pelaajat);
-        
-        
-        
-        //Pelikayttoliittyma kayttis = new Pelikayttoliittyma()
-        //SwingUtilities.invokeLater(kayttis);
+                        
+        PeliKayttoliittyma kayttis = new PeliKayttoliittyma(peli);
+        SwingUtilities.invokeLater(kayttis);
     }
     
 }
