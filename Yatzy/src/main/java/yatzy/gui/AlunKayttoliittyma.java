@@ -41,7 +41,7 @@ public class AlunKayttoliittyma implements Runnable {
         teksti.setEditable(false);
         container.add(teksti);
 
-        AlunValikko valikko = new AlunValikko(new ValikonKuuntelija(this.peli), this.peli);
+        AlunValikko valikko = new AlunValikko(this.peli);
 
         container.add(valikko);
     }
