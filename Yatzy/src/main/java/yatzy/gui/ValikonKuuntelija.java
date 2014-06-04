@@ -22,7 +22,7 @@ public class ValikonKuuntelija implements ActionListener{
         int pelaajat = Integer.parseInt(e.getActionCommand());
         this.peli.luoPelaajat(pelaajat);
         
-        PeliKayttoliittyma kayttis = new PeliKayttoliittyma(peli);
+        PeliKayttoliittyma kayttis = new PeliKayttoliittyma(this.peli);
         SwingUtilities.invokeLater(kayttis);
     }
     

@@ -45,14 +45,13 @@ public class Piirtoalusta extends JPanel {
             noppa5 = ImageIO.read(this.getClass().getResource("/images/noppa5.png"));
             noppa6 = ImageIO.read(this.getClass().getResource("/images/noppa6.png"));
         } catch (IOException ex) {
-            Logger.getLogger(Piirtoalusta.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Noppia ei löydy");
         }
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        
 
         g.drawImage(noppa1, 400, 0, null);
         g.drawImage(noppa2, 400, 70, null);
@@ -60,34 +59,31 @@ public class Piirtoalusta extends JPanel {
         g.drawImage(noppa4, 400, 210, null);
         g.drawImage(noppa5, 400, 280, null);
         g.drawImage(noppa6, 400, 350, null);
-
-        
     }
 
-    private void piirraNopat(Graphics g) { //noppien sijainti ei voi riippua silmäluvusta!
-        for (Noppa noppa : kayttis.getPeli().nopat) {
-            if (noppa.getArvo() == 1) {
-                g.drawImage(noppa1, 400, 0, frame);
-                
-            } else if (noppa.getArvo() == 2) {
-                g.drawImage(noppa2, 400, 70, frame);
-                
-            } else if (noppa.getArvo() == 3) {
-                g.drawImage(noppa3, 400, 140, frame);
-                
-            } else if (noppa.getArvo() == 4) {
-                g.drawImage(noppa4, 400, 210, frame);
-                
-            } else if (noppa.getArvo() == 5) {
-                g.drawImage(noppa5, 400, 280, frame);
-                
-            } else if (noppa.getArvo() == 6) {
-                g.drawImage(noppa6, 400, 350, frame);
-                
-            }
-        }
-    }
-
+//    private void piirraNopat(Graphics g) { //noppien sijainti ei voi riippua silmäluvusta!
+//        for (Noppa noppa : kayttis.getPeli().nopat) {
+//            if (noppa.getArvo() == 1) {
+//                g.drawImage(noppa1, 400, 0, frame);
+//                
+//            } else if (noppa.getArvo() == 2) {
+//                g.drawImage(noppa2, 400, 70, frame);
+//                
+//            } else if (noppa.getArvo() == 3) {
+//                g.drawImage(noppa3, 400, 140, frame);
+//                
+//            } else if (noppa.getArvo() == 4) {
+//                g.drawImage(noppa4, 400, 210, frame);
+//                
+//            } else if (noppa.getArvo() == 5) {
+//                g.drawImage(noppa5, 400, 280, frame);
+//                
+//            } else if (noppa.getArvo() == 6) {
+//                g.drawImage(noppa6, 400, 350, frame);
+//                
+//            }
+//        }
+//    }
     private void piirraNopanKuva(Graphics g, ImageIcon kuva) {
 //        g.drawImage(kuva, WIDTH, WIDTH, frame);
     }
