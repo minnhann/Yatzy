@@ -3,13 +3,25 @@ package yatzy.peli;
 import java.util.ArrayList;
 import yatzy.domain.Noppa;
 
-
+/**
+ *
+ * @author minnhann
+ */
 public class NoppaYhdistelmat {
 
+    /**
+     *
+     */
     public NoppaYhdistelmat() {
 
     }
 
+    /**
+     * Tarkistaa, sisältävätkö nopat silmäluvut 1, 2, 3, 4, 5
+     * 
+     * @param nopat lista pelin nopista
+     * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
+     */
     public int pieniSuora(Noppa[] nopat) {
         ArrayList<Integer> luvut = new ArrayList<Integer>();
 
@@ -24,6 +36,12 @@ public class NoppaYhdistelmat {
         return 0;
     }
 
+    /**
+     * Tarkistaa, sisältävätkö nopat silmäluvut 2, 3, 4, 5, 6
+     * 
+     * @param nopat lista pelin nopista
+     * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
+     */
     public int suuriSuora(Noppa[] nopat) {
         ArrayList<Integer> luvut = new ArrayList<Integer>();
 
@@ -38,6 +56,13 @@ public class NoppaYhdistelmat {
         return 0;
     }
 
+    /**
+     * Tarkistaa, montako haluttua silmälukua olevia noppia on.
+     * 
+     * @param nopat lista pelin nopista
+     * @param numero minkä silmäluvun ilmenemiskertoja lasketaan
+     * @return saman pisteluvun sisältävien noppien lukumäärä
+     */
     public int montakoSamaaNumeroa(Noppa[] nopat, int numero) {
         int maara = 0;
         for (Noppa noppa : nopat) {
@@ -48,6 +73,13 @@ public class NoppaYhdistelmat {
         return maara;
     }
 
+    /**
+     * Tarkistaa, löytyykö nopista jokin pari, eli kaksi samaa silmälukua
+     * sisältävää noppaa
+     * 
+     * @param nopat lista pelin nopista
+     * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
+     */
     public int yksiPari(Noppa[] nopat) {
 
         for (int i = 6; i >= 1; i--) {
@@ -58,6 +90,12 @@ public class NoppaYhdistelmat {
         return 0;
     }
 
+    /**
+     * Tarkistaa, löytyykö nopista kaksi paria.
+     * 
+     * @param nopat lista pelin nopista
+     * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
+     */
     public int kaksiParia(Noppa[] nopat) {
         int parienMaara = 0;
         int summa = 0;
@@ -74,6 +112,13 @@ public class NoppaYhdistelmat {
         return 0;
     }
 
+    /**
+     * Tarkistaa, löytyykö nopista kolme keskenään samaa silmälukua,
+     * ja kaksi keskenään samaa silmälukua.
+     * 
+     * @param nopat lista pelin nopista
+     * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
+     */
     public int taysikasi(Noppa[] nopat) {
         int montakoLoydetty = 0;
         int summa = 0;
@@ -97,6 +142,12 @@ public class NoppaYhdistelmat {
         return 0;
     }
 
+    /**
+     * Tarkistaa, onko kaikkien noppien silmäluku sama
+     * 
+     * @param nopat lista pelin nopista
+     * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
+     */
     public int yatzy(Noppa[] nopat) {
         int ekaNoppa = nopat[0].getArvo();
 
@@ -108,6 +159,12 @@ public class NoppaYhdistelmat {
         return 50;
     }
 
+    /**
+     * Laskee noppien summan
+     * 
+     * @param nopat lista pelin nopista
+     * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
+     */
     public int sattuma(Noppa[] nopat) {
         int summa = 0;
 

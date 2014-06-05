@@ -12,7 +12,8 @@ import javax.swing.WindowConstants;
 import yatzy.peli.Peli;
 
 /**
- *
+ * Pelin käyttöliittymä
+ * 
  * @author minnhann
  */
 public class PeliKayttoliittyma implements Runnable {
@@ -22,9 +23,15 @@ public class PeliKayttoliittyma implements Runnable {
 //    private JTextArea teksti;
     private Piirtoalusta piirtoalusta;
 
+    /**
+     * Konstruktorissa asetetaan peliksi main:ssa luotu peli sekä
+     * luodaan piirtoalusta
+     * 
+     * @param yatzy peli, jota käsitellään
+     */
     public PeliKayttoliittyma(Peli yatzy) {
         this.peli = yatzy;
-        this.piirtoalusta = new Piirtoalusta(frame, this);
+        this.piirtoalusta = new Piirtoalusta(frame, this, this.peli);
 
     }
 
@@ -45,10 +52,12 @@ public class PeliKayttoliittyma implements Runnable {
         container.add(piirtoalusta);
     }
 
+
     public JFrame getFrame() {
         return frame;
     }
     
+
     public Peli getPeli(){
         return this.peli;
     }

@@ -5,10 +5,20 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import yatzy.peli.Peli;
 
+/**
+ * Luodaan valikko, josta valitaan pelaajien lukumäärä
+ * 
+ * @author minnhann
+ */
 public class AlunValikko extends JPanel {
 
     private Peli peli;
 
+    /**
+     * Konstruktorissa luodaan pelaajien lukumäärän vaihtoehtonapit
+     * 
+     * @param peli
+     */
     public AlunValikko(Peli peli) {
 
         super(new GridLayout(1, 3));

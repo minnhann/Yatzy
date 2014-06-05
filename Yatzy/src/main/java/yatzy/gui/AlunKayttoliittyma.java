@@ -9,7 +9,9 @@ import javax.swing.WindowConstants;
 import yatzy.peli.Peli;
 
 /**
- *
+ * Luodaan pelin aloitusikkuna, josta valitaan, kuinka monta pelaajaa (1-4)
+ * peliä pelaa
+ * 
  * @author minnhann
  */
 public class AlunKayttoliittyma implements Runnable {
@@ -17,9 +19,15 @@ public class AlunKayttoliittyma implements Runnable {
     private JFrame frame;
     private Peli peli;
     
+    /**
+     * Asetetaan peliksi main:ssa luotu peli
+     * 
+     * @param yatzy peli -luokka
+     */
     public AlunKayttoliittyma(Peli yatzy){
         this.peli = yatzy;
     }
+
 
     @Override
     public void run() {
@@ -45,6 +53,7 @@ public class AlunKayttoliittyma implements Runnable {
 
         container.add(valikko);
     }
+
 
     public JFrame getFrame() {
         return frame;
