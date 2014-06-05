@@ -57,3 +57,9 @@ Tiistai 3.6 klo 12.30-16.15
 
 Keskiviikko 4.6 klo 12.30-13.40
 - Sekvenssikaavioiden piirtäminen ja dokumentointiin liittäminen.
+
+Torstai 5.6 klo 13-16.15
+- Oman tietokoneen noppien piirtämisen ongelman selvitys, JavaDocin luonti ja kirjoittaminen, pelin grafiikan suunnittelu sekä vaihtoehtoisen pelikäyttöliittymän luonti.
+
+Torstai 5.6 klo 20.30-21.00
+- Tuntikirjanpidon sekä luokkakaavion päivitys.

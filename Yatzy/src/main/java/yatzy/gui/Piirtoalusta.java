@@ -61,13 +61,11 @@ public class Piirtoalusta extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-<<<<<<< HEAD
-        
-=======
+
 //        JButton heita = new JButton("Heita noppia");
 //        this.frame.add(heita);
 //        heita.addActionListener(new KlikkaustenKuuntelija(this.peli));
->>>>>>> 1cb28ee3694ac22aa100f795472503389e5e2a89
+
         piirraNopat(g);
        
     }
@@ -100,7 +98,7 @@ public class Piirtoalusta extends JPanel {
     }
     
     private void piirraTaulukko(Graphics g){
-<<<<<<< HEAD
+
         
 
 //        g.drawImage(noppa1, 400, 0, null);
@@ -137,10 +135,10 @@ public class Piirtoalusta extends JPanel {
 ////    private void piirraNopanKuva(Graphics g, ImageIcon kuva) {
 //////        g.drawImage(kuva, WIDTH, WIDTH, frame);
 ////    }
-=======
 
-    }
->>>>>>> 1cb28ee3694ac22aa100f795472503389e5e2a89
+
+//    }
+
 
     /**
      * Piirretään tilanne uudelleen
