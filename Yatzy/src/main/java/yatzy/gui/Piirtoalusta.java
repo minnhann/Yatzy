@@ -1,19 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package yatzy.gui;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.io.File;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import yatzy.domain.Noppa;
@@ -26,7 +20,7 @@ public class Piirtoalusta extends JPanel {
 
     private JFrame frame;
     private PeliKayttoliittyma kayttis;
-    private Image noppa1;
+    private BufferedImage noppa1;
     private Image noppa2;
     private Image noppa3;
     private Image noppa4;
@@ -53,43 +47,40 @@ public class Piirtoalusta extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         
-
-        g.drawImage(noppa1, 400, 0, null);
-        g.drawImage(noppa2, 400, 70, null);
-        g.drawImage(noppa3, 400, 140, null);
-        g.drawImage(noppa4, 400, 210, null);
-        g.drawImage(noppa5, 400, 280, null);
-        g.drawImage(noppa6, 400, 350, null);
+        piirraNopat(g);
 
         
     }
 
-    private void piirraNopat(Graphics g) { //noppien sijainti ei voi riippua silmäluvusta!
+    private void piirraNopat(Graphics g) {
+        int korkeus = 0;
         for (Noppa noppa : kayttis.getPeli().nopat) {
             if (noppa.getArvo() == 1) {
-                g.drawImage(noppa1, 400, 0, frame);
+                g.drawImage(noppa1, 400, korkeus, frame);
                 
             } else if (noppa.getArvo() == 2) {
-                g.drawImage(noppa2, 400, 70, frame);
+                g.drawImage(noppa2, 400, korkeus, frame);
                 
             } else if (noppa.getArvo() == 3) {
-                g.drawImage(noppa3, 400, 140, frame);
+                g.drawImage(noppa3, 400, korkeus, frame);
                 
             } else if (noppa.getArvo() == 4) {
-                g.drawImage(noppa4, 400, 210, frame);
+                g.drawImage(noppa4, 400, korkeus, frame);
                 
             } else if (noppa.getArvo() == 5) {
-                g.drawImage(noppa5, 400, 280, frame);
+                g.drawImage(noppa5, 400, korkeus, frame);
                 
             } else if (noppa.getArvo() == 6) {
-                g.drawImage(noppa6, 400, 350, frame);
+                g.drawImage(noppa6, 400, korkeus, frame);
                 
             }
+            korkeus += 70;
+            
         }
     }
-
-    private void piirraNopanKuva(Graphics g, ImageIcon kuva) {
-//        g.drawImage(kuva, WIDTH, WIDTH, frame);
+    
+    private void piirraTaulukko(Graphics g){
+        
     }
 
     public void paivita() {
