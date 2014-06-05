@@ -51,3 +51,9 @@ Perjantai 30.5 klo 12.20-13.25
 
 Maanantai 2.6 klo 20.10-20.41
 - Noppien piirtäminen ja repositorioon lataaminen.
+
+Tiistai 3.6 klo 12.30-16.15
+- Pelikäyttöliittymän ja Piirtoalustan luominen ja noppien kuvien liittäminen piirtoalustaan. Tässä paljon hankaluuksia, piirtoalusta ei löytänyt noppien kuvia. Nyt toimii koulun koneella, mutta kotikoneella pelikäyttöliittymä kaatuu.
+
+Keskiviikko 4.6 klo 12.30-13.40
+- Sekvenssikaavioiden piirtäminen ja dokumentointiin liittäminen.
