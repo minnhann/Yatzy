@@ -46,7 +46,6 @@ public class Piirtoalusta extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-<<<<<<< HEAD
         
         piirraNopat(g);
 
@@ -82,14 +81,13 @@ public class Piirtoalusta extends JPanel {
     
     private void piirraTaulukko(Graphics g){
         
-=======
 
-        g.drawImage(noppa1, 400, 0, null);
-        g.drawImage(noppa2, 400, 70, null);
-        g.drawImage(noppa3, 400, 140, null);
-        g.drawImage(noppa4, 400, 210, null);
-        g.drawImage(noppa5, 400, 280, null);
-        g.drawImage(noppa6, 400, 350, null);
+//        g.drawImage(noppa1, 400, 0, null);
+//        g.drawImage(noppa2, 400, 70, null);
+//        g.drawImage(noppa3, 400, 140, null);
+//        g.drawImage(noppa4, 400, 210, null);
+//        g.drawImage(noppa5, 400, 280, null);
+//        g.drawImage(noppa6, 400, 350, null);
     }
 
 //    private void piirraNopat(Graphics g) { //noppien sijainti ei voi riippua silmäluvusta!
@@ -115,10 +113,9 @@ public class Piirtoalusta extends JPanel {
 //            }
 //        }
 //    }
-    private void piirraNopanKuva(Graphics g, ImageIcon kuva) {
-//        g.drawImage(kuva, WIDTH, WIDTH, frame);
->>>>>>> 4268b2a8f2e0667cc3ede917128546a6c0b00018
-    }
+////    private void piirraNopanKuva(Graphics g, ImageIcon kuva) {
+//////        g.drawImage(kuva, WIDTH, WIDTH, frame);
+////    }
 
     public void paivita() {
         repaint();
