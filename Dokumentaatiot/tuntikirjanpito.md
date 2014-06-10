@@ -63,3 +63,9 @@ Torstai 5.6 klo 13-16.15
 
 Torstai 5.6 klo 20.30-21.00
 - Tuntikirjanpidon sekä luokkakaavion päivitys.
+
+Tiistai 10.6. klo 11.30-15.45
+- Piirtoalusta2 ja Piirtoalustan ohjelmointia, lopulta keskityin Piirtoalusta2:n kehittämiseen. Noppien heittotoiminnon ja lukitsemisen luominen, taulukon piirto, nopat napeiksi ja heitto -napin ohjelmointi.
+
+Tiistai 10.6 klo 22-22.25
+- Tuntikirjanpidon päivistys. Noppien lukitsemisominaisuuden korjaus (kun lukitaan, taustaväri mustaksi, kun lukitus puretaan, taustaväri palautuu vaaleanharmaaksi).

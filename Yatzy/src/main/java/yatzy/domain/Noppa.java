@@ -24,8 +24,8 @@ public class Noppa {
     private boolean lukittu;
 
     /**
-     * Konstruktorissa luodaan noppa, se saa jonkin arvon väliltä 1-6
-     * ja se asetetaan lukitsemattomaksi
+     * Konstruktorissa luodaan noppa, se saa jonkin arvon väliltä 1-6 ja se
+     * asetetaan lukitsemattomaksi
      */
     public Noppa() {
         this.arvo = random.nextInt(6) + 1;
@@ -42,8 +42,8 @@ public class Noppa {
     }
 
     /**
-     * Jos noppa ei ole lukittu, heitetään sitä eli arvotaan uusi arvo
-     * väliltä 1-6
+     * Jos noppa ei ole lukittu, heitetään sitä eli arvotaan uusi arvo väliltä
+     * 1-6
      */
     public void heitaNoppaa() {
         if (this.lukittu) {
@@ -54,7 +54,7 @@ public class Noppa {
 
     /**
      * Palauttaa tiedon siitä, onko noppa lukittu vai ei.
-     * 
+     *
      * @return boolean -arvo (true = lukittu, false = lukitsematon)
      */
     public boolean onkoLukittu() {
@@ -65,6 +65,10 @@ public class Noppa {
      * Lukitsee nopan
      */
     public void lukitseNoppa() {
-        this.lukittu = true;
+        if (!this.lukittu) {
+            this.lukittu = true;
+        } else {
+            this.lukittu = false;
+        }
     }
 }

@@ -32,7 +32,6 @@ public class PeliKayttoliittyma implements Runnable{
      */
     public PeliKayttoliittyma(Peli yatzy) {
         this.peli = yatzy;
-        //this.piirtoalusta = new Piirtoalusta(frame, this, this.peli);
         this.piirtoalusta = new Piirtoalusta2(frame, this, this.peli);
 
     }
@@ -42,7 +41,6 @@ public class PeliKayttoliittyma implements Runnable{
         frame = new JFrame("Yatzy");
         frame.setLayout(new BorderLayout());      
         frame.setPreferredSize(piirtoalusta.getPreferredSize());
-        //frame.setPreferredSize(new Dimension(500, 500));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

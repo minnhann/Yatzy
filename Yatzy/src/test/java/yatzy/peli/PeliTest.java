@@ -87,12 +87,12 @@ public class PeliTest {
         assertEquals(3, peli.getHeitot());
     }
     
-    @Test
-    public void pelaajanPisteetKasvavatMetodiaKutsuttaessa(){
-        peli.kasvataPelaajanPisteita(peli.pelaajat.get(1), 3);
-        
-        assertEquals(3, peli.pelaajat.get(1).getPisteet());
-    }
+//    @Test
+//    public void pelaajanPisteetKasvavatMetodiaKutsuttaessa(){
+//        peli.kasvataPelaajanPisteita(peli.pelaajat.get(1), 3);
+//        
+//        assertEquals(3, peli.pelaajat.get(1).getPisteet());
+//    }
     
     @Test
     public void luoPelaajatNimeaaOikein(){
