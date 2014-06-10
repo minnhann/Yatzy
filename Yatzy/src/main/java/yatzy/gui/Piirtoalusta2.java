@@ -4,30 +4,31 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.HashMap;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import yatzy.domain.Noppa;
 import yatzy.peli.Peli;
 
 /**
- * Mahdollinen korvaava piirtoalusta. Piirtää peli-ikkunaan nopat, tilannetaulukon sekä
- * pelin jälkeisen tekstikentän
- * 
+ * Mahdollinen korvaava piirtoalusta. Piirtää peli-ikkunaan nopat,
+ * tilannetaulukon sekä pelin jälkeisen tekstikentän
+ *
  * @author minnhann
  */
 public class Piirtoalusta2 extends javax.swing.JPanel {
 
     private JFrame frame;
     private PeliKayttoliittyma kayttis;
-    private BufferedImage noppa1;
-    private BufferedImage noppa2;
-    private Image noppa3;
-    private Image noppa4;
-    private Image noppa5;
-    private Image noppa6;
+    private ImageIcon[] kuvat;
     private Peli peli;
+    private HashMap<JButton, Noppa> nopat;
 
     /**
      * Creates new form NewJPanel
+     *
      * @param frame
      * @param kayttis
      * @param peli
@@ -38,16 +39,28 @@ public class Piirtoalusta2 extends javax.swing.JPanel {
         this.frame = frame;
         this.kayttis = kayttis;
         this.peli = peli;
+        this.kuvat = new ImageIcon[6];
         try {
-            noppa1 = ImageIO.read(this.getClass().getResource("/images/noppa1.png"));
-            noppa2 = ImageIO.read(this.getClass().getResource("/images/noppa2.png"));
-            noppa3 = ImageIO.read(this.getClass().getResource("/images/noppa3.png"));
-            noppa4 = ImageIO.read(this.getClass().getResource("/images/noppa4.png"));
-            noppa5 = ImageIO.read(this.getClass().getResource("/images/noppa5.png"));
-            noppa6 = ImageIO.read(this.getClass().getResource("/images/noppa6.png"));
+            kuvat[0] = new ImageIcon(ImageIO.read(this.getClass().getResource("/images/noppa1.png")));
+            kuvat[1] = new ImageIcon(ImageIO.read(this.getClass().getResource("/images/noppa2.png")));
+            kuvat[2] = new ImageIcon(ImageIO.read(this.getClass().getResource("/images/noppa3.png")));
+            kuvat[3] = new ImageIcon(ImageIO.read(this.getClass().getResource("/images/noppa4.png")));
+            kuvat[4] = new ImageIcon(ImageIO.read(this.getClass().getResource("/images/noppa5.png")));
+            kuvat[5] = new ImageIcon(ImageIO.read(this.getClass().getResource("/images/noppa6.png")));
+
         } catch (IOException ex) {
             System.out.println("Noppia ei löydy");
         }
+        this.nopat = new HashMap<JButton, Noppa>();
+
+        this.nopat.put(jButton1, peli.nopat[0]);
+        this.nopat.put(jButton2, peli.nopat[1]);
+        this.nopat.put(jButton3, peli.nopat[2]);
+        this.nopat.put(jButton4, peli.nopat[3]);
+        this.nopat.put(jButton5, peli.nopat[4]);
+
+        
+        this.paivitaTaulukko();
     }
 
     /**
@@ -61,6 +74,13 @@ public class Piirtoalusta2 extends javax.swing.JPanel {
 
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tulosTaulukko = new javax.swing.JTable();
+        heita = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -73,35 +93,173 @@ public class Piirtoalusta2 extends javax.swing.JPanel {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jButton1.setText("jButton1");
+        jButton1.setIcon(new javax.swing.ImageIcon("/home/minnhann/Yatzy/Yatzy/src/main/resources/images/noppa1.png")); // NOI18N
+        jButton1.setPreferredSize(new java.awt.Dimension(100, 100));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setIcon(new javax.swing.ImageIcon("/home/minnhann/Yatzy/Yatzy/src/main/resources/images/noppa2.png")); // NOI18N
+        jButton2.setPreferredSize(new java.awt.Dimension(100, 100));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setIcon(new javax.swing.ImageIcon("/home/minnhann/Yatzy/Yatzy/src/main/resources/images/noppa3.png")); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setIcon(new javax.swing.ImageIcon("/home/minnhann/Yatzy/Yatzy/src/main/resources/images/noppa4.png")); // NOI18N
+        jButton4.setPreferredSize(new java.awt.Dimension(100, 100));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setIcon(new javax.swing.ImageIcon("/home/minnhann/Yatzy/Yatzy/src/main/resources/images/noppa5.png")); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        tulosTaulukko.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tulosTaulukko);
+
+        heita.setText("Heitä");
+        heita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                heitaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 403, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(heita, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(169, 169, 169)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 344, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(22, 22, 22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
+                        .addComponent(jButton5))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(heita)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        this.nopat.get(jButton5).lukitseNoppa();
+        jButton5.setBackground(Color.black);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        this.nopat.get(jButton3).lukitseNoppa();
+        jButton3.setBackground(Color.black);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.nopat.get(jButton1).lukitseNoppa();
+        jButton1.setBackground(Color.black);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void heitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_heitaActionPerformed
+        // TODO add your handling code here:
+        peli.heitaNoppia();
+        asetaNoppienKuvat();
+
+
+    }//GEN-LAST:event_heitaActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        this.nopat.get(jButton4).lukitseNoppa();
+        jButton4.setBackground(Color.black);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.nopat.get(jButton2).lukitseNoppa();
+        jButton2.setBackground(Color.black);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void asetaNoppienKuvat() {
+        for (JButton nappi  : this.nopat.keySet()) {
+            nappi.setIcon(kuvat[nopat.get(nappi).getArvo() - 1]);
+
+        }
+    }
+    
+    private void paivitaTaulukko(){
+        tulosTaulukko.setModel(new Taulukko(this.peli));
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton heita;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tulosTaulukko;
     // End of variables declaration//GEN-END:variables
 }

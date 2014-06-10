@@ -5,6 +5,7 @@
  */
 package yatzy.gui;
 
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -16,12 +17,12 @@ import yatzy.peli.Peli;
  * 
  * @author minnhann
  */
-public class PeliKayttoliittyma implements Runnable {
+public class PeliKayttoliittyma implements Runnable{
 
     private JFrame frame;
     private Peli peli;
 //    private JTextArea teksti;
-    private Piirtoalusta piirtoalusta;
+    private Piirtoalusta2 piirtoalusta;
 
     /**
      * Konstruktorissa asetetaan peliksi main:ssa luotu peli sekä
@@ -31,14 +32,17 @@ public class PeliKayttoliittyma implements Runnable {
      */
     public PeliKayttoliittyma(Peli yatzy) {
         this.peli = yatzy;
-        this.piirtoalusta = new Piirtoalusta(frame, this, this.peli);
+        //this.piirtoalusta = new Piirtoalusta(frame, this, this.peli);
+        this.piirtoalusta = new Piirtoalusta2(frame, this, this.peli);
 
     }
 
     @Override
     public void run() {
         frame = new JFrame("Yatzy");
-        frame.setPreferredSize(new Dimension(500, 500));
+        frame.setLayout(new BorderLayout());      
+        frame.setPreferredSize(piirtoalusta.getPreferredSize());
+        //frame.setPreferredSize(new Dimension(500, 500));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

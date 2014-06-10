@@ -109,7 +109,7 @@ public class Peli {
     public void kasvataPelaajanPisteita(Pelaaja pelaajanNimi, int lisays) {
         for (Pelaaja pelaaja : pelaajat) {
             if (pelaaja.equals(pelaajanNimi)) {
-                pelaaja.lisaaPisteita(lisays);
+//                pelaaja.lisaaPisteita(lisays);
             }
         }
     }
