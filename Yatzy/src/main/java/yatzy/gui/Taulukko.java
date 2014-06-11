@@ -27,7 +27,7 @@ public class Taulukko extends AbstractTableModel{
 
     @Override
     public int getRowCount() {
-        return 19;
+        return 18;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Taulukko extends AbstractTableModel{
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         if(columnIndex == 0){
-            return this.nimet[0];
+            return this.nimet[rowIndex];
         }
         return peli.pelaajat.get(columnIndex -1).getPisteet();
     }

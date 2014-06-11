@@ -69,3 +69,6 @@ Tiistai 10.6. klo 11.30-15.45
 
 Tiistai 10.6 klo 22-22.25
 - Tuntikirjanpidon p‰ivistys. Noppien lukitsemisominaisuuden korjaus (kun lukitaan, taustav‰ri mustaksi, kun lukitus puretaan, taustav‰ri palautuu vaaleanharmaaksi).
+
+Keskiviikko 11.6 klo 21.50-22.00
+- Taulukkoon pistevaihtoehtojen nimien lis‰‰minen. Lis‰ksi yritin saada piirtoalustan tunnistamaan taulukon koon, mutten onnistunut t‰ss‰.
