@@ -12,24 +12,6 @@ public class Pelaaja {
     private String nimi;
     private int[] pisteet;
     private boolean[] onkoLisattyPisteita;
-//    private int ykkoset;
-//    private int kakkoset;
-//    private int kolmoset;
-//    private int neloset;
-//    private int vitoset;
-//    private int kutoset;
-//    private int score;
-//    private int bonus;
-//    private int yksiPari;
-//    private int kaksiParia;
-//    private int kolmeSamaa;
-//    private int neljaSamaa;
-//    private int pieniSuora;
-//    private int suuriSuora;
-//    private int taysiKasi;
-//    private int yatzy;
-//    private int sattuma;
-//    private int total;
 
     /**
      * Konstruktorissa asetetaan pelaajalle nimi sekä asetetaan pisteiksi nolla.
@@ -40,8 +22,8 @@ public class Pelaaja {
         this.nimi = nimi;
         this.pisteet = new int[18];
         this.onkoLisattyPisteita = new boolean[18];
-        
-        for(int i = 0; i < 18; i++){
+
+        for (int i = 0; i < 18; i++) {
             this.onkoLisattyPisteita[i] = false;
         }
 
@@ -54,8 +36,8 @@ public class Pelaaja {
     public int getPisteet(int mitkaPisteet) {
         return pisteet[mitkaPisteet];
     }
-    
-    public boolean getOnkoLisattyPisteita(int kohta){
+
+    public boolean getOnkoLisattyPisteita(int kohta) {
         return this.onkoLisattyPisteita[kohta];
     }
 
@@ -80,4 +62,22 @@ public class Pelaaja {
         }
     }
 
+//    pisteet[0] ykkoset;
+//    pisteet[1] kakkoset;
+//    pisteet[2] kolmoset;
+//    pisteet[3] neloset;
+//    pisteet[4] vitoset;
+//    pisteet[5] kutoset;
+//    pisteet[6] score;
+//    pisteet[7] bonus;
+//    pisteet[8] yksiPari;
+//    pisteet[9] kaksiParia;
+//    pisteet[10] kolmeSamaa;
+//    pisteet[11] neljaSamaa;
+//    pisteet[12] pieniSuora;
+//    pisteet[13] suuriSuora;
+//    pisteet[14] taysiKasi;
+//    pisteet[15] yatzy;
+//    pisteet[16] sattuma;
+//    pisteet[17] total;
 }
