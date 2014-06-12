@@ -7,7 +7,7 @@ import yatzy.peli.Peli;
 
 /**
  * Luodaan valikko, josta valitaan pelaajien lukumäärä
- * 
+ *
  * @author minnhann
  */
 public class AlunValikko extends JPanel {
@@ -16,7 +16,7 @@ public class AlunValikko extends JPanel {
 
     /**
      * Konstruktorissa luodaan pelaajien lukumäärän vaihtoehtonapit
-     * 
+     *
      * @param peli
      */
     public AlunValikko(Peli peli) {
@@ -29,6 +29,10 @@ public class AlunValikko extends JPanel {
         luoVaihtoehdot();
     }
 
+    /**
+     * Luodaan neljä nappulaa, joista käyttäjä voi valita, montako pelaajaa
+     * (1-4) peliä pelaa.
+     */
     private void luoVaihtoehdot() {
 
         JButton yksi = new JButton("1 pelaaja");

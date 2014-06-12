@@ -216,4 +216,49 @@ public class NoppaYhdistelmatTest {
         assertEquals(10, yhdistelmat.sattuma(nopat));
     }
 
+    @Test
+    public void kolmeSamanlaistaLaskeePisteetOikein() {
+        nopat[0].setArvo(1);
+        nopat[1].setArvo(1);
+        nopat[2].setArvo(5);
+        nopat[3].setArvo(6);
+        nopat[4].setArvo(1);
+
+        assertEquals(3, yhdistelmat.kolmeSamanlaista(nopat));
+    }
+
+    @Test
+    public void josEiLöydyKolmeaSamanlaistaNiinPalauttaaNollan() {
+        nopat[0].setArvo(2);
+        nopat[1].setArvo(1);
+        nopat[2].setArvo(1);
+        nopat[3].setArvo(6);
+        nopat[4].setArvo(5);
+
+        assertEquals(0, yhdistelmat.kolmeSamanlaista(nopat));
+
+    }
+
+    @Test
+    public void neljaSamanlaistaLaskeePisteetOikein() {
+        nopat[0].setArvo(1);
+        nopat[1].setArvo(1);
+        nopat[2].setArvo(1);
+        nopat[3].setArvo(6);
+        nopat[4].setArvo(1);
+
+        assertEquals(4, yhdistelmat.neljaSamanlaista(nopat));
+    }
+
+    @Test
+    public void josEiNeljaaSamanlaistaNiinPalauttaaNollan() {
+        nopat[0].setArvo(1);
+        nopat[1].setArvo(1);
+        nopat[2].setArvo(5);
+        nopat[3].setArvo(6);
+        nopat[4].setArvo(1);
+
+        assertEquals(0, yhdistelmat.neljaSamanlaista(nopat));
+    }
+
 }

@@ -62,7 +62,7 @@ public class Noppa {
     }
 
     /**
-     * Lukitsee nopan
+     * Lukitsee lukitsemattoman nopan sekä vapauttaa lukitun nopan.
      */
     public void vaihdaNopanLukitus() {
         if (!this.lukittu) {

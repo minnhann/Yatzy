@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import yatzy.domain.Noppa;
 
 /**
+ * Sisältää kokoelman noppayhdistelmiä
  *
  * @author minnhann
  */
@@ -18,7 +19,7 @@ public class NoppaYhdistelmat {
 
     /**
      * Tarkistaa, sisältävätkö nopat silmäluvut 1, 2, 3, 4, 5
-     * 
+     *
      * @param nopat lista pelin nopista
      * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
      */
@@ -38,7 +39,7 @@ public class NoppaYhdistelmat {
 
     /**
      * Tarkistaa, sisältävätkö nopat silmäluvut 2, 3, 4, 5, 6
-     * 
+     *
      * @param nopat lista pelin nopista
      * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
      */
@@ -58,7 +59,7 @@ public class NoppaYhdistelmat {
 
     /**
      * Tarkistaa, montako haluttua silmälukua olevia noppia on.
-     * 
+     *
      * @param nopat lista pelin nopista
      * @param numero minkä silmäluvun ilmenemiskertoja lasketaan
      * @return saman pisteluvun sisältävien noppien lukumäärä
@@ -72,25 +73,38 @@ public class NoppaYhdistelmat {
         }
         return maara;
     }
-    
-    public int kolmeSamanlaista(Noppa[] nopat){
+
+    /**
+     * Tarkistaa, löytyykö nopista kolme saman silmäluvun omaavaa noppaa.
+     *
+     * @param nopat lista pelin nopista
+     * @return saman silmäluvun sisältävien noppien summa
+     */
+    public int kolmeSamanlaista(Noppa[] nopat) {
         int summa = 0;
-        
-        for(int i = 6; i > 0; i--){
-            if(montakoSamaaNumeroa(nopat, i) == 3){
-                summa = 3*i;
+
+        for (int i = 6; i > 0; i--) {
+            if (montakoSamaaNumeroa(nopat, i) >= 3) {
+                summa = 3 * i;
                 return summa;
             }
-        }        
+        }
         return summa;
     }
-    
-    public int neljaSamanlaista(Noppa[] nopat){
+
+    /**
+     * Tarkistaa, löytyykö nopista neljä saman silmäluvun omaavaa noppaa.
+     *
+     * @param nopat lista pelin nopista
+     * @return saman pisteluvun sisältävien noppien summa
+     */
+
+    public int neljaSamanlaista(Noppa[] nopat) {
         int summa = 0;
-        
-        for(int i = 6; i > 0; i--){
-            if(montakoSamaaNumeroa(nopat, i) == 4){
-                summa = 4*i;
+
+        for (int i = 6; i > 0; i--) {
+            if (montakoSamaaNumeroa(nopat, i) == 4) {
+                summa = 4 * i;
                 return summa;
             }
         }
@@ -100,7 +114,7 @@ public class NoppaYhdistelmat {
     /**
      * Tarkistaa, löytyykö nopista jokin pari, eli kaksi samaa silmälukua
      * sisältävää noppaa
-     * 
+     *
      * @param nopat lista pelin nopista
      * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
      */
@@ -116,7 +130,7 @@ public class NoppaYhdistelmat {
 
     /**
      * Tarkistaa, löytyykö nopista kaksi paria.
-     * 
+     *
      * @param nopat lista pelin nopista
      * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
      */
@@ -137,9 +151,9 @@ public class NoppaYhdistelmat {
     }
 
     /**
-     * Tarkistaa, löytyykö nopista kolme keskenään samaa silmälukua,
-     * ja kaksi keskenään samaa silmälukua.
-     * 
+     * Tarkistaa, löytyykö nopista kolme keskenään samaa silmälukua, ja kaksi
+     * keskenään samaa silmälukua.
+     *
      * @param nopat lista pelin nopista
      * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
      */
@@ -168,7 +182,7 @@ public class NoppaYhdistelmat {
 
     /**
      * Tarkistaa, onko kaikkien noppien silmäluku sama
-     * 
+     *
      * @param nopat lista pelin nopista
      * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
      */
@@ -185,7 +199,7 @@ public class NoppaYhdistelmat {
 
     /**
      * Laskee noppien summan
-     * 
+     *
      * @param nopat lista pelin nopista
      * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
      */

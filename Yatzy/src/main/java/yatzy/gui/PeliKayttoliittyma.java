@@ -14,20 +14,19 @@ import yatzy.peli.Peli;
 
 /**
  * Pelin käyttöliittymä
- * 
+ *
  * @author minnhann
  */
-public class PeliKayttoliittyma implements Runnable{
+public class PeliKayttoliittyma implements Runnable {
 
     private JFrame frame;
     private Peli peli;
-//    private JTextArea teksti;
     private Piirtoalusta piirtoalusta;
 
     /**
-     * Konstruktorissa asetetaan peliksi main:ssa luotu peli sekä
-     * luodaan piirtoalusta
-     * 
+     * Konstruktorissa asetetaan peliksi main:ssa luotu peli sekä luodaan
+     * piirtoalusta
+     *
      * @param yatzy peli, jota käsitellään
      */
     public PeliKayttoliittyma(Peli yatzy) {
@@ -39,7 +38,7 @@ public class PeliKayttoliittyma implements Runnable{
     @Override
     public void run() {
         frame = new JFrame("Yatzy");
-        frame.setLayout(new BorderLayout());      
+        frame.setLayout(new BorderLayout());
         frame.setPreferredSize(piirtoalusta.getPreferredSize());
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -50,17 +49,20 @@ public class PeliKayttoliittyma implements Runnable{
         frame.setVisible(true);
     }
 
+    /**
+     * Lisätään piirtoalusta.
+     * @param container komponentit lisätään
+     */
+
     private void luoKomponentit(Container container) {
         container.add(piirtoalusta);
     }
 
-
     public JFrame getFrame() {
         return frame;
     }
-    
 
-    public Peli getPeli(){
+    public Peli getPeli() {
         return this.peli;
     }
 

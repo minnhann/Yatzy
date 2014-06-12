@@ -11,8 +11,8 @@ import yatzy.domain.Noppa;
 import yatzy.peli.Peli;
 
 /**
- * Mahdollinen korvaava piirtoalusta. Piirtää peli-ikkunaan nopat,
- * tilannetaulukon sekä pelin jälkeisen tekstikentän
+ * Piirtoalusta piirtää peli-ikkunaan nopat, tilannetaulukon, heitä -napin sekä
+ * eri vaihtoehdoille napit.
  *
  * @author minnhann
  */
@@ -27,9 +27,9 @@ public class Piirtoalusta extends javax.swing.JPanel {
     /**
      * Creates new form NewJPanel
      *
-     * @param frame
-     * @param kayttis
-     * @param peli
+     * @param frame pelin frame
+     * @param kayttis pelin käyttöliittymä
+     * @param peli kyseinen peli
      */
     public Piirtoalusta(JFrame frame, PeliKayttoliittyma kayttis, Peli peli) {
         initComponents();
@@ -522,7 +522,11 @@ public class Piirtoalusta extends javax.swing.JPanel {
         peli.lisaaPelaajallePisteita(16);
         paivitaTaulukko();
     }//GEN-LAST:event_sattumaActionPerformed
-
+    
+    /**
+     * Asettaa jokaiselle nopalle sen silmälukua vastaavan kuvan. Lisäksi
+     * asettaa taustavärin mustaksi tai harmaaksi.
+     */
     private void asetaNoppienKuvat() {
         for (JButton nappi : this.nopat.keySet()) {
             asetaNopanVari(nappi);
@@ -531,6 +535,10 @@ public class Piirtoalusta extends javax.swing.JPanel {
         }
     }
 
+    /**
+     * Asettaa lukitun nopan taustaväriksi mustan ja lukitsemattoman nopan
+     * taustaväriksi vaaleanharmaan.
+     */
     private void asetaNopanVari(JButton noppa) {
         if (this.nopat.get(noppa).onkoLukittu()) {
             noppa.setBackground(Color.black);
@@ -539,6 +547,9 @@ public class Piirtoalusta extends javax.swing.JPanel {
         }
     }
 
+    /**
+     * Päivittää tulostaulukon ja asettaa noppien kuvat uudelleen.
+     */
     private void paivitaTaulukko() {
         tulosTaulukko.setModel(new Taulukko(this.peli));
         asetaNoppienKuvat();

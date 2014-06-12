@@ -3,23 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package yatzy.gui;
 
 import javax.swing.table.AbstractTableModel;
 import yatzy.peli.Peli;
 
 /**
+ * Tilannetaulukko, jota piirtoalusta käyttää.
  *
  * @author minnhann
  */
-public class Taulukko extends AbstractTableModel{
+public class Taulukko extends AbstractTableModel {
+
     private Peli peli;
     private String[] nimet;
 
-    
-    
-    public Taulukko(Peli peli){
+    /**
+     * Konstruktorisa asetetaan peliksi tämä peli, luodaan nimet -taulukko johon
+     * listataan eri noppayhdistelmien nimet.
+     */
+    public Taulukko(Peli peli) {
         this.peli = peli;
         nimet = new String[18];
         listaaVaihtoehtojenNimet();
@@ -32,15 +35,15 @@ public class Taulukko extends AbstractTableModel{
 
     @Override
     public int getColumnCount() {
-        return peli.pelaajat.size()+1;
+        return peli.pelaajat.size() + 1;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        if(columnIndex == 0){
+        if (columnIndex == 0) {
             return this.nimet[rowIndex];
         }
-        return peli.pelaajat.get(columnIndex -1).getPisteet(rowIndex);
+        return peli.pelaajat.get(columnIndex - 1).getPisteet(rowIndex);
     }
 
     @Override
@@ -50,8 +53,12 @@ public class Taulukko extends AbstractTableModel{
         }
         return "Pelaaja " + col;
     }
-    
-    private void listaaVaihtoehtojenNimet(){
+
+    /**
+     * Listataan nimet -taulukkoon eri noppayhdistelmien nimet taulukkoon
+     * sijoitusta varten.
+     */
+    private void listaaVaihtoehtojenNimet() {
         this.nimet[0] = "1";
         this.nimet[1] = "2";
         this.nimet[2] = "3";
@@ -70,7 +77,7 @@ public class Taulukko extends AbstractTableModel{
         this.nimet[15] = "Yatzy";
         this.nimet[16] = "Sattuma";
         this.nimet[17] = "Total";
-        
+
     }
-    
+
 }

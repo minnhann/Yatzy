@@ -72,3 +72,9 @@ Tiistai 10.6 klo 22-22.25
 
 Keskiviikko 11.6 klo 21.50-22.00
 - Taulukkoon pistevaihtoehtojen nimien lis‰‰minen. Lis‰ksi yritin saada piirtoalustan tunnistamaan taulukon koon, mutten onnistunut t‰ss‰.
+
+Torstai 12.6 klo 14.15-16.30
+- Piirtoalustan kehitt‰minen: napit, joista pelaaja voi valita, mihin kombinaatioon pisteet kirjataan sek‰ pisteiden kirjaaminen taulukkoon. Lis‰ksi hieman testien kirjoittamista sek‰ uusien noppien toiminnallisuuden toteutus.
+
+Torstai 12.6 klo 21.30-23.30
+- Puuttuvien testien kirjoittaminen sek‰ aiempien testien korjaus, uuden pit -raportin generointi, luokkakaavion p‰ivitys, sekvenssikaavioiden p‰ivitys sek‰ yksi uusi sekvenssikaavio, tuntikirjanpidon p‰ivitys. JavaDoc:n p‰ivitys ja jatkaminen sek‰ turhien luokkien poisto.

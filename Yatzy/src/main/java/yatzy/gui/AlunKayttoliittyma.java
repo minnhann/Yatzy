@@ -11,23 +11,22 @@ import yatzy.peli.Peli;
 /**
  * Luodaan pelin aloitusikkuna, josta valitaan, kuinka monta pelaajaa (1-4)
  * peliä pelaa
- * 
+ *
  * @author minnhann
  */
 public class AlunKayttoliittyma implements Runnable {
 
     private JFrame frame;
     private Peli peli;
-    
+
     /**
      * Asetetaan peliksi main:ssa luotu peli
-     * 
+     *
      * @param yatzy peli -luokka
      */
-    public AlunKayttoliittyma(Peli yatzy){
+    public AlunKayttoliittyma(Peli yatzy) {
         this.peli = yatzy;
     }
-
 
     @Override
     public void run() {
@@ -41,6 +40,11 @@ public class AlunKayttoliittyma implements Runnable {
         frame.setVisible(true);
     }
 
+    /**
+     * Luodaan komponentit frameen ja lisätään alun valikko.
+     * @param container komponentit lisätään
+     */
+
     private void luoKomponentit(Container container) {
         GridLayout layout = new GridLayout(2, 1);
         container.setLayout(layout);
@@ -53,7 +57,6 @@ public class AlunKayttoliittyma implements Runnable {
 
         container.add(valikko);
     }
-
 
     public JFrame getFrame() {
         return frame;

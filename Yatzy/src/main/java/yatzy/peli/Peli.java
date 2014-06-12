@@ -47,10 +47,13 @@ public class Peli {
         this.luoNopat();
         pelaajat = new ArrayList<Pelaaja>();
         this.vuoro = 0;
-        this.heitot = 1; //tarkista lopuksi, onko heitot alussa 0 vai 1!!
+        this.heitot = 1;
 
     }
 
+    /**
+     * Luodaan viisi noppaa.
+     */
     private void luoNopat() {
         for (int i = 0; i < nopat.length; i++) {
             nopat[i] = new Noppa();
@@ -74,7 +77,6 @@ public class Peli {
      */
     public void heitaNoppia() {
         if (heitot == 3) {
-//            System.out.println("Ei heittoja jäljellä");
             return;
         }
         for (Noppa noppa : nopat) {
@@ -84,13 +86,19 @@ public class Peli {
     }
 
     /**
-     * Vaihdetaan pelaajan vuoroa järjestyksessä seuraavalle pelaajalle
+     * Vaihdetaan pelaajan vuoroa järjestyksessä seuraavalle pelaajalle ja
+     * arvotaan seuraavalle pelaajalle uudet nopat. Lisäksi asetetaan heittojen
+     * lukumäärä yhteen vastaamaan seuraavan pelaajan tilannetta.
      */
     public void vaihdaVuoroa() {
         this.vuoro = (this.vuoro + 1) % pelaajat.size();
         arvoUudetNopatSeuraavalleVuorolle();
         this.heitot = 1;
     }
+
+    /**
+     * Arvotaan uudet nopat, jotka ovat kaikki lukitsemattomia.
+     */
 
     public void arvoUudetNopatSeuraavalleVuorolle() {
         for (Noppa noppa : nopat) {
@@ -117,11 +125,10 @@ public class Peli {
      *
      * @param monesko mihin pistekohtaan pisteitä halutaan lisätä
      */
-
     public void lisaaPelaajallePisteita(int monesko) {
         int pisteet = 0;
         if (monesko == 0 || monesko == 1 || monesko == 2 || monesko == 3 || monesko == 4 || monesko == 5) {
-            pisteet = (monesko +1) * yhdistelmat.montakoSamaaNumeroa(nopat, monesko +1);
+            pisteet = (monesko + 1) * yhdistelmat.montakoSamaaNumeroa(nopat, monesko + 1);
         } else if (monesko == 8) {
             pisteet = yhdistelmat.yksiPari(nopat);
         } else if (monesko == 9) {

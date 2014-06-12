@@ -78,5 +78,18 @@ public class PelaajaTest {
         assertEquals(25, pelaaja.getPisteet(7));
         assertEquals(63, pelaaja.getPisteet(6));
     }
+    
+    @Test
+    public void pisteitaEiVoiLisataUudelleenSamaanKohtaan(){
+        pelaaja.lisaaPisteita(3, 0);
+        pelaaja.lisaaPisteita(5, 0);
+        
+        assertEquals(3, pelaaja.getPisteet(0));
+    }
+    @Test
+    public void alussaOnkoLisattyPisteitaOnFalse(){
+        assertEquals(false, pelaaja.getOnkoLisattyPisteita(0));
+        assertEquals(false, pelaaja.getOnkoLisattyPisteita(17));
+    }
 
 }

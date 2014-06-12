@@ -54,6 +54,10 @@ public class Pelaaja {
     public int getPisteet(int mitkaPisteet) {
         return pisteet[mitkaPisteet];
     }
+    
+    public boolean getOnkoLisattyPisteita(int kohta){
+        return this.onkoLisattyPisteita[kohta];
+    }
 
     /**
      * Kasvatetaan pelaajan pisteitä
