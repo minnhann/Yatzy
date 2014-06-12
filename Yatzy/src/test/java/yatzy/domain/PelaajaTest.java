@@ -27,39 +27,56 @@ public class PelaajaTest {
     public void tearDown() {
     }
 
+
+
     @Test
-    public void konstruktoriAsettaaAlussaPisteetNollaksi() {
-        assertEquals(0, pelaaja.getPisteet());
+    public void pisteidenLisaysToimiiOikein() {
+        pelaaja.lisaaPisteita(6, 1);
+
+        assertEquals(6, pelaaja.getPisteet(1));
     }
 
-//    @Test
-//    public void pisteidenLisaysToimiiOikein() {
-//        pelaaja.lisaaPisteita(1);
-//
-//        assertEquals(1, pelaaja.getPisteet());
-//    }
-//
-//    @Test
-//    public void negatiivistenPisteidenLisaysAlussaEiOnnistu() {
-//        pelaaja.lisaaPisteita(-5);
-//
-//        assertEquals(0, pelaaja.getPisteet());
-//    }
-//
-//    @Test
-//    public void nollanLisaysEiMuutaPisteita() {
-//        pelaaja.lisaaPisteita(1);
-//        pelaaja.lisaaPisteita(0);
-//
-//        assertEquals(1, pelaaja.getPisteet());
-//    }
-//    
-//    @Test
-//    public void negatiivistenPisteidenLisaysEiVahennaPisteita(){
-//        pelaaja.lisaaPisteita(5);
-//        pelaaja.lisaaPisteita(-3);
-//        
-//        assertEquals(5, pelaaja.getPisteet());
-//    }
+    @Test
+    public void negatiivistenPisteidenLisaysAlussaEiOnnistu() {
+        pelaaja.lisaaPisteita(-5, 1);
+
+        assertEquals(0, pelaaja.getPisteet(1));
+    }
+
+    @Test
+    public void nollanLisaysEiMuutaPisteita() {
+        pelaaja.lisaaPisteita(1, 4);
+        pelaaja.lisaaPisteita(0, 4);
+
+        assertEquals(1, pelaaja.getPisteet(4));
+    }
+    
+    @Test
+    public void negatiivistenPisteidenLisaysEiVahennaPisteita(){
+        pelaaja.lisaaPisteita(5, 6);
+        pelaaja.lisaaPisteita(-3, 6);
+        
+        assertEquals(5, pelaaja.getPisteet(6));
+    }
+    
+    @Test
+    public void kokonaispisteetKasvavatPisteitaLisattaessa(){
+        pelaaja.lisaaPisteita(10, 7);
+        
+        assertEquals(10, pelaaja.getPisteet(17));
+    }
+    
+    @Test
+    public void lisapisteetJaAlunKokonaispisteetTulevat(){
+        pelaaja.lisaaPisteita(3, 0);
+        pelaaja.lisaaPisteita(6, 1);
+        pelaaja.lisaaPisteita(9, 2);
+        pelaaja.lisaaPisteita(12, 3);
+        pelaaja.lisaaPisteita(15, 4);
+        pelaaja.lisaaPisteita(18, 5);
+        
+        assertEquals(25, pelaaja.getPisteet(7));
+        assertEquals(63, pelaaja.getPisteet(6));
+    }
 
 }

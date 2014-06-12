@@ -46,8 +46,8 @@ public class Peli {
         nopat = new Noppa[5];
         this.luoNopat();
         pelaajat = new ArrayList<Pelaaja>();
-        this.vuoro = 1;
-        this.heitot = 0; //tarkista lopuksi, onko heitot alussa 0 vai 1!!
+        this.vuoro = 0;
+        this.heitot = 1; //tarkista lopuksi, onko heitot alussa 0 vai 1!!
 
     }
 
@@ -60,7 +60,7 @@ public class Peli {
 
     /**
      * Luodaan pelaajat ja talletetaan listaan
-     * 
+     *
      * @param lkm pelaajien lukumäärä
      */
     public void luoPelaajat(int lkm) {
@@ -87,8 +87,18 @@ public class Peli {
      * Vaihdetaan pelaajan vuoroa järjestyksessä seuraavalle pelaajalle
      */
     public void vaihdaVuoroa() {
-        this.vuoro = (this.vuoro + 1) % (pelaajat.size() + 1);
-        this.heitot = 0;
+        this.vuoro = (this.vuoro + 1) % pelaajat.size();
+        arvoUudetNopatSeuraavalleVuorolle();
+        this.heitot = 1;
+    }
+
+    public void arvoUudetNopatSeuraavalleVuorolle() {
+        for (Noppa noppa : nopat) {
+            if (noppa.onkoLukittu()) {
+                noppa.vaihdaNopanLukitus();
+            }
+            noppa.heitaNoppaa();
+        }
     }
 
     public int getHeitot() {
@@ -101,17 +111,39 @@ public class Peli {
 
     /**
      *
-     * Kasvatetaan valitun pelaajan pisteitä halutun lisäyksen verran.
-     * 
-     * @param pelaajanNimi pelaaja, jolle lisätään pisteitä
-     * @param lisays pisteet, jotka lisätään
+     * Kasvatetaan vuorossa olevan pelaajan pisteita, ja lisätään uusi
+     * pistemäärä oikeaan kohtaan pelaajan pistetaulukkoa. Lopuksi vaihdetaan
+     * vuoroa.
+     *
+     * @param monesko mihin pistekohtaan pisteitä halutaan lisätä
      */
-    public void kasvataPelaajanPisteita(Pelaaja pelaajanNimi, int lisays) {
-        for (Pelaaja pelaaja : pelaajat) {
-            if (pelaaja.equals(pelaajanNimi)) {
-//                pelaaja.lisaaPisteita(lisays);
-            }
+
+    public void lisaaPelaajallePisteita(int monesko) {
+        int pisteet = 0;
+        if (monesko == 0 || monesko == 1 || monesko == 2 || monesko == 3 || monesko == 4 || monesko == 5) {
+            pisteet = (monesko +1) * yhdistelmat.montakoSamaaNumeroa(nopat, monesko +1);
+        } else if (monesko == 8) {
+            pisteet = yhdistelmat.yksiPari(nopat);
+        } else if (monesko == 9) {
+            pisteet = yhdistelmat.kaksiParia(nopat);
+        } else if (monesko == 10) {
+            pisteet = yhdistelmat.kolmeSamanlaista(nopat);
+        } else if (monesko == 11) {
+            pisteet = yhdistelmat.neljaSamanlaista(nopat);
+        } else if (monesko == 12) {
+            pisteet = yhdistelmat.pieniSuora(nopat);
+        } else if (monesko == 13) {
+            pisteet = yhdistelmat.suuriSuora(nopat);
+        } else if (monesko == 14) {
+            pisteet = yhdistelmat.taysikasi(nopat);
+        } else if (monesko == 15) {
+            pisteet = yhdistelmat.yatzy(nopat);
+        } else if (monesko == 16) {
+            pisteet = yhdistelmat.sattuma(nopat);
         }
+        pelaajat.get(vuoro).lisaaPisteita(pisteet, monesko);
+        vaihdaVuoroa();
+
     }
 
 }

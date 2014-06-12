@@ -72,6 +72,30 @@ public class NoppaYhdistelmat {
         }
         return maara;
     }
+    
+    public int kolmeSamanlaista(Noppa[] nopat){
+        int summa = 0;
+        
+        for(int i = 6; i > 0; i--){
+            if(montakoSamaaNumeroa(nopat, i) == 3){
+                summa = 3*i;
+                return summa;
+            }
+        }        
+        return summa;
+    }
+    
+    public int neljaSamanlaista(Noppa[] nopat){
+        int summa = 0;
+        
+        for(int i = 6; i > 0; i--){
+            if(montakoSamaaNumeroa(nopat, i) == 4){
+                summa = 4*i;
+                return summa;
+            }
+        }
+        return summa;
+    }
 
     /**
      * Tarkistaa, löytyykö nopista jokin pari, eli kaksi samaa silmälukua

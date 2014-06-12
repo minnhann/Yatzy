@@ -35,7 +35,7 @@ public class NoppaTest {
     
     @Test
     public void lukitseeNopan(){
-        noppa.lukitseNoppa();
+        noppa.vaihdaNopanLukitus();
         
         assertEquals(true, noppa.onkoLukittu());
     }
@@ -43,7 +43,7 @@ public class NoppaTest {
     @Test
     public void noppaaEiHeitetaJosNoppaLukittu(){
         int arvo = noppa.getArvo();
-        noppa.lukitseNoppa();
+        noppa.vaihdaNopanLukitus();
         noppa.heitaNoppaa();
         
         assertEquals(arvo, noppa.getArvo());

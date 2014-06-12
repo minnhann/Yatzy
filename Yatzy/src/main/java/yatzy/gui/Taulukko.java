@@ -40,7 +40,7 @@ public class Taulukko extends AbstractTableModel{
         if(columnIndex == 0){
             return this.nimet[rowIndex];
         }
-        return peli.pelaajat.get(columnIndex -1).getPisteet();
+        return peli.pelaajat.get(columnIndex -1).getPisteet(rowIndex);
     }
 
     @Override

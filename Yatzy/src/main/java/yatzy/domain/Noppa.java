@@ -64,7 +64,7 @@ public class Noppa {
     /**
      * Lukitsee nopan
      */
-    public void lukitseNoppa() {
+    public void vaihdaNopanLukitus() {
         if (!this.lukittu) {
             this.lukittu = true;
         } else {

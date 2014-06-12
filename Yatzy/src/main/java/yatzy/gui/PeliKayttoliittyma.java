@@ -22,7 +22,7 @@ public class PeliKayttoliittyma implements Runnable{
     private JFrame frame;
     private Peli peli;
 //    private JTextArea teksti;
-    private Piirtoalusta2 piirtoalusta;
+    private Piirtoalusta piirtoalusta;
 
     /**
      * Konstruktorissa asetetaan peliksi main:ssa luotu peli sekä
@@ -32,7 +32,7 @@ public class PeliKayttoliittyma implements Runnable{
      */
     public PeliKayttoliittyma(Peli yatzy) {
         this.peli = yatzy;
-        this.piirtoalusta = new Piirtoalusta2(frame, this, this.peli);
+        this.piirtoalusta = new Piirtoalusta(frame, this, this.peli);
 
     }
 
