@@ -14,7 +14,6 @@ import yatzy.peli.Peli;
  * @author minnhann
  */
 public class Taulukko extends AbstractTableModel {
-
     private Peli peli;
     private String[] nimet;
 

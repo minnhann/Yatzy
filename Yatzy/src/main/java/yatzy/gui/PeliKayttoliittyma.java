@@ -18,7 +18,6 @@ import yatzy.peli.Peli;
  * @author minnhann
  */
 public class PeliKayttoliittyma implements Runnable {
-
     private JFrame frame;
     private Peli peli;
     private Piirtoalusta piirtoalusta;
@@ -32,7 +31,6 @@ public class PeliKayttoliittyma implements Runnable {
     public PeliKayttoliittyma(Peli yatzy) {
         this.peli = yatzy;
         this.piirtoalusta = new Piirtoalusta(frame, this, this.peli);
-
     }
 
     @Override

@@ -17,7 +17,6 @@ import yatzy.peli.Peli;
  * @author minnhann
  */
 public class Piirtoalusta extends javax.swing.JPanel {
-
     private JFrame frame;
     private PeliKayttoliittyma kayttis;
     private ImageIcon[] kuvat;
@@ -51,14 +50,13 @@ public class Piirtoalusta extends javax.swing.JPanel {
         }
         this.nopat = new HashMap<JButton, Noppa>();
 
-        this.nopat.put(jButton1, peli.nopat[0]);
-        this.nopat.put(jButton2, peli.nopat[1]);
-        this.nopat.put(jButton3, peli.nopat[2]);
-        this.nopat.put(jButton4, peli.nopat[3]);
-        this.nopat.put(jButton5, peli.nopat[4]);
+        this.nopat.put(noppa1, peli.nopat[0]);
+        this.nopat.put(noppa2, peli.nopat[1]);
+        this.nopat.put(noppa3, peli.nopat[2]);
+        this.nopat.put(noppa4, peli.nopat[3]);
+        this.nopat.put(noppa5, peli.nopat[4]);
 
         this.paivitaTaulukko();
-        asetaNoppienKuvat();
     }
 
     /**
@@ -70,11 +68,11 @@ public class Piirtoalusta extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        noppa1 = new javax.swing.JButton();
+        noppa2 = new javax.swing.JButton();
+        noppa3 = new javax.swing.JButton();
+        noppa4 = new javax.swing.JButton();
+        noppa5 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tulosTaulukko = new javax.swing.JTable();
         heita = new javax.swing.JButton();
@@ -93,37 +91,39 @@ public class Piirtoalusta extends javax.swing.JPanel {
         yatzy = new javax.swing.JButton();
         sattuma = new javax.swing.JButton();
         taysiKasi = new javax.swing.JButton();
+        kierros = new javax.swing.JLabel();
+        vuorossa = new javax.swing.JLabel();
 
-        jButton1.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        noppa1.setPreferredSize(new java.awt.Dimension(100, 100));
+        noppa1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                noppa1ActionPerformed(evt);
             }
         });
 
-        jButton2.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        noppa2.setPreferredSize(new java.awt.Dimension(100, 100));
+        noppa2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                noppa2ActionPerformed(evt);
             }
         });
 
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        noppa3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                noppa3ActionPerformed(evt);
             }
         });
 
-        jButton4.setPreferredSize(new java.awt.Dimension(100, 100));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        noppa4.setPreferredSize(new java.awt.Dimension(100, 100));
+        noppa4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                noppa4ActionPerformed(evt);
             }
         });
 
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        noppa5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                noppa5ActionPerformed(evt);
             }
         });
 
@@ -253,6 +253,12 @@ public class Piirtoalusta extends javax.swing.JPanel {
             }
         });
 
+        kierros.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        kierros.setText("jLabel1");
+
+        vuorossa.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        vuorossa.setText("jLabel2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -264,7 +270,13 @@ public class Piirtoalusta extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(147, 147, 147)
-                        .addComponent(heita, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(heita, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(vuorossa)
+                            .addComponent(kierros, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
@@ -277,9 +289,9 @@ public class Piirtoalusta extends javax.swing.JPanel {
                                 .addComponent(neloset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(vitoset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(kuutoset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,13 +314,13 @@ public class Piirtoalusta extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(noppa1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(noppa2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(noppa3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(noppa4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(noppa5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(56, 56, 56))))
         );
         layout.setVerticalGroup(
@@ -318,7 +330,7 @@ public class Piirtoalusta extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(noppa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(9, 9, 9)
                                 .addComponent(ykkoset)
@@ -329,7 +341,7 @@ public class Piirtoalusta extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(noppa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addComponent(neloset)
@@ -340,9 +352,9 @@ public class Piirtoalusta extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton3)
+                                .addComponent(noppa3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(noppa4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(yksiPari)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -350,60 +362,63 @@ public class Piirtoalusta extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(kolmeSamaa))))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(5, 5, 5)
+                .addComponent(neljaSamaa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(noppa5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5)
-                        .addGap(103, 103, 103)
                         .addComponent(heita)
                         .addGap(42, 42, 42))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(neljaSamaa)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pieniSuora)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(pieniSuora)
+                            .addComponent(kierros, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(suuriSuora)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(taysiKasi)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(taysiKasi)
+                            .addComponent(vuorossa))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(yatzy)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(sattuma)
-                        .addContainerGap(38, Short.MAX_VALUE))))
+                        .addContainerGap(42, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void noppa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noppa5ActionPerformed
         // TODO add your handling code here:
-        this.nopat.get(jButton5).vaihdaNopanLukitus();
-        if (this.nopat.get(jButton5).onkoLukittu()) {
-            jButton5.setBackground(Color.black);
+        this.nopat.get(noppa5).vaihdaNopanLukitus();
+        if (this.nopat.get(noppa5).onkoLukittu()) {
+            noppa5.setBackground(Color.black);
         } else {
-            jButton5.setBackground(Color.lightGray);
+            noppa5.setBackground(Color.lightGray);
         }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_noppa5ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void noppa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noppa3ActionPerformed
         // TODO add your handling code here:
-        this.nopat.get(jButton3).vaihdaNopanLukitus();
-        if (this.nopat.get(jButton3).onkoLukittu()) {
-            jButton3.setBackground(Color.black);
+        this.nopat.get(noppa3).vaihdaNopanLukitus();
+        if (this.nopat.get(noppa3).onkoLukittu()) {
+            noppa3.setBackground(Color.black);
         } else {
-            jButton3.setBackground(Color.lightGray);
+            noppa3.setBackground(Color.lightGray);
         }
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_noppa3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void noppa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noppa1ActionPerformed
         // TODO add your handling code here:
-        this.nopat.get(jButton1).vaihdaNopanLukitus();
-        if (this.nopat.get(jButton1).onkoLukittu()) {
-            jButton1.setBackground(Color.black);
+        this.nopat.get(noppa1).vaihdaNopanLukitus();
+        if (this.nopat.get(noppa1).onkoLukittu()) {
+            noppa1.setBackground(Color.black);
         } else {
-            jButton1.setBackground(Color.lightGray);
+            noppa1.setBackground(Color.lightGray);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_noppa1ActionPerformed
 
     private void heitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_heitaActionPerformed
         // TODO add your handling code here:
@@ -413,25 +428,25 @@ public class Piirtoalusta extends javax.swing.JPanel {
 
     }//GEN-LAST:event_heitaActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void noppa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noppa4ActionPerformed
         // TODO add your handling code here:
-        this.nopat.get(jButton4).vaihdaNopanLukitus();
-        if (this.nopat.get(jButton4).onkoLukittu()) {
-            jButton4.setBackground(Color.black);
+        this.nopat.get(noppa4).vaihdaNopanLukitus();
+        if (this.nopat.get(noppa4).onkoLukittu()) {
+            noppa4.setBackground(Color.black);
         } else {
-            jButton4.setBackground(Color.lightGray);
+            noppa4.setBackground(Color.lightGray);
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_noppa4ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void noppa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noppa2ActionPerformed
         // TODO add your handling code here:
-        this.nopat.get(jButton2).vaihdaNopanLukitus();
-        if (this.nopat.get(jButton2).onkoLukittu()) {
-            jButton2.setBackground(Color.black);
+        this.nopat.get(noppa2).vaihdaNopanLukitus();
+        if (this.nopat.get(noppa2).onkoLukittu()) {
+            noppa2.setBackground(Color.black);
         } else {
-            jButton2.setBackground(Color.lightGray);
+            noppa2.setBackground(Color.lightGray);
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_noppa2ActionPerformed
 
     private void yksiPariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yksiPariActionPerformed
         // TODO add your handling code here:
@@ -531,7 +546,6 @@ public class Piirtoalusta extends javax.swing.JPanel {
         for (JButton nappi : this.nopat.keySet()) {
             asetaNopanVari(nappi);
             nappi.setIcon(kuvat[nopat.get(nappi).getArvo() - 1]);
-
         }
     }
 
@@ -548,34 +562,53 @@ public class Piirtoalusta extends javax.swing.JPanel {
     }
 
     /**
-     * Päivittää tulostaulukon ja asettaa noppien kuvat uudelleen.
+     * Päivittää tulostaulukon ja asettaa noppien kuvat uudelleen sekä
+     * asettaa kierroksen numeron ja vuorossa olevan pelaajan nimen.
      */
     private void paivitaTaulukko() {
         tulosTaulukko.setModel(new Taulukko(this.peli));
         asetaNoppienKuvat();
+        if(!peli.loppuikoPeli()){
+            asetaTekstit();
+        } else{
+            asetaLopputeksti();
+        }
+        
+    }
+    
+    private void asetaTekstit(){
+        kierros.setText("Kierros:  " + peli.getKierros());
+        vuorossa.setText("Vuorossa: Pelaaja  " + (peli.getVuoro() +1));
+    }
+    
+    private void asetaLopputeksti(){
+        kierros.setText("Peli päättyi!");
+        vuorossa.setText("Pelin voitti  " + peli.tarkistaVoittaja() + "!");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton heita;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton kakkoset;
     private javax.swing.JButton kaksiParia;
+    private javax.swing.JLabel kierros;
     private javax.swing.JButton kolmeSamaa;
     private javax.swing.JButton kolmoset;
     private javax.swing.JButton kuutoset;
     private javax.swing.JButton neljaSamaa;
     private javax.swing.JButton neloset;
+    private javax.swing.JButton noppa1;
+    private javax.swing.JButton noppa2;
+    private javax.swing.JButton noppa3;
+    private javax.swing.JButton noppa4;
+    private javax.swing.JButton noppa5;
     private javax.swing.JButton pieniSuora;
     private javax.swing.JButton sattuma;
     private javax.swing.JButton suuriSuora;
     private javax.swing.JButton taysiKasi;
     private javax.swing.JTable tulosTaulukko;
     private javax.swing.JButton vitoset;
+    private javax.swing.JLabel vuorossa;
     private javax.swing.JButton yatzy;
     private javax.swing.JButton ykkoset;
     private javax.swing.JButton yksiPari;

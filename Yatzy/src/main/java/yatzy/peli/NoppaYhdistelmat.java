@@ -25,11 +25,9 @@ public class NoppaYhdistelmat {
      */
     public int pieniSuora(Noppa[] nopat) {
         ArrayList<Integer> luvut = new ArrayList<Integer>();
-
         for (int i = 0; i < 5; i++) {
             luvut.add(nopat[i].getArvo());
         }
-
         if (luvut.contains(1) && luvut.contains(2) && luvut.contains(3)
                 && luvut.contains(4) && luvut.contains(5)) {
             return 15;
@@ -45,11 +43,9 @@ public class NoppaYhdistelmat {
      */
     public int suuriSuora(Noppa[] nopat) {
         ArrayList<Integer> luvut = new ArrayList<Integer>();
-
         for (int i = 0; i < 5; i++) {
             luvut.add(nopat[i].getArvo());
         }
-
         if (luvut.contains(2) && luvut.contains(3) && luvut.contains(4)
                 && luvut.contains(5) && luvut.contains(6)) {
             return 20;
@@ -82,7 +78,6 @@ public class NoppaYhdistelmat {
      */
     public int kolmeSamanlaista(Noppa[] nopat) {
         int summa = 0;
-
         for (int i = 6; i > 0; i--) {
             if (montakoSamaaNumeroa(nopat, i) >= 3) {
                 summa = 3 * i;
@@ -101,7 +96,6 @@ public class NoppaYhdistelmat {
 
     public int neljaSamanlaista(Noppa[] nopat) {
         int summa = 0;
-
         for (int i = 6; i > 0; i--) {
             if (montakoSamaaNumeroa(nopat, i) == 4) {
                 summa = 4 * i;
@@ -119,7 +113,6 @@ public class NoppaYhdistelmat {
      * @return kyseisestä yhdistelmästä kyseisillä nopilla saatava pistemäärä
      */
     public int yksiPari(Noppa[] nopat) {
-
         for (int i = 6; i >= 1; i--) {
             if (montakoSamaaNumeroa(nopat, i) >= 2) {
                 return i * 2;
@@ -188,7 +181,6 @@ public class NoppaYhdistelmat {
      */
     public int yatzy(Noppa[] nopat) {
         int ekaNoppa = nopat[0].getArvo();
-
         for (Noppa noppa : nopat) {
             if (noppa.getArvo() != ekaNoppa) {
                 return 0;
@@ -205,7 +197,6 @@ public class NoppaYhdistelmat {
      */
     public int sattuma(Noppa[] nopat) {
         int summa = 0;
-
         for (Noppa noppa : nopat) {
             summa += noppa.getArvo();
         }

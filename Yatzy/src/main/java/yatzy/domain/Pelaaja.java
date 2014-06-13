@@ -8,7 +8,6 @@ import java.util.ArrayList;
  * @author minnhann
  */
 public class Pelaaja {
-
     private String nimi;
     private int[] pisteet;
     private boolean[] onkoLisattyPisteita;
@@ -22,7 +21,6 @@ public class Pelaaja {
         this.nimi = nimi;
         this.pisteet = new int[18];
         this.onkoLisattyPisteita = new boolean[18];
-
         for (int i = 0; i < 18; i++) {
             this.onkoLisattyPisteita[i] = false;
         }
@@ -48,7 +46,7 @@ public class Pelaaja {
      */
     public void lisaaPisteita(int lisays, int pisteKohta) {
         //jos pisteita jo lisätty, huomauta pelaajalle
-        if (lisays >= 0 && onkoLisattyPisteita[pisteKohta] == false) {
+        if (onkoLisattyPisteita[pisteKohta] == false) {
             pisteet[pisteKohta] += lisays;
             onkoLisattyPisteita[pisteKohta] = true;
             pisteet[17] += lisays;
@@ -59,6 +57,8 @@ public class Pelaaja {
                     pisteet[7] += 25;
                 }
             }
+        } else {
+            return;
         }
     }
 

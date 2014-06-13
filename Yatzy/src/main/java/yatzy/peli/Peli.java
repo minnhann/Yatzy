@@ -36,6 +36,8 @@ public class Peli {
      * Pitää kirjaa heitoista jokaisen vuoron aikana
      */
     private int heitot;
+    
+    private int kierros;
 
     /**
      * Konstruktorisa luodaan noppayhdistelmät, nopat, pelaajat, asetetaan
@@ -48,6 +50,7 @@ public class Peli {
         pelaajat = new ArrayList<Pelaaja>();
         this.vuoro = 0;
         this.heitot = 1;
+        this.kierros = 1;
 
     }
 
@@ -68,7 +71,7 @@ public class Peli {
      */
     public void luoPelaajat(int lkm) {
         for (int i = 0; i < lkm; i++) {
-            pelaajat.add(new Pelaaja("Pelaaja" + (i + 1)));
+            pelaajat.add(new Pelaaja("Pelaaja " + (i + 1)));
         }
     }
 
@@ -94,12 +97,14 @@ public class Peli {
         this.vuoro = (this.vuoro + 1) % pelaajat.size();
         arvoUudetNopatSeuraavalleVuorolle();
         this.heitot = 1;
+        if(this.vuoro == 0){
+            this.kierros++;
+        }
     }
-
+    
     /**
      * Arvotaan uudet nopat, jotka ovat kaikki lukitsemattomia.
      */
-
     public void arvoUudetNopatSeuraavalleVuorolle() {
         for (Noppa noppa : nopat) {
             if (noppa.onkoLukittu()) {
@@ -116,7 +121,32 @@ public class Peli {
     public int getVuoro() {
         return this.vuoro;
     }
-
+    
+    public int getKierros(){
+        return this.kierros;
+    }
+    
+    public boolean loppuikoPeli(){
+        if(this.kierros == 19){
+            return true;
+        }
+        return false;
+    }
+    
+    public String tarkistaVoittaja(){
+        String voittaja = "";
+        int parhaatPisteet = 0;
+        
+        for(Pelaaja pelaaja : this.pelaajat){
+            if(pelaaja.getPisteet(17) > parhaatPisteet){
+                voittaja = pelaaja.getNimi();
+                parhaatPisteet = pelaaja.getPisteet(17);
+            } else if(pelaaja.getPisteet(17) == parhaatPisteet){
+                voittaja += " ja " + pelaaja.getNimi();
+            }
+        }
+        return voittaja;
+    }
     /**
      *
      * Kasvatetaan vuorossa olevan pelaajan pisteita, ja lisätään uusi
@@ -150,7 +180,6 @@ public class Peli {
         }
         pelaajat.get(vuoro).lisaaPisteita(pisteet, monesko);
         vaihdaVuoroa();
-
     }
 
 }

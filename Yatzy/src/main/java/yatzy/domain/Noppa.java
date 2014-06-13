@@ -30,7 +30,6 @@ public class Noppa {
     public Noppa() {
         this.arvo = random.nextInt(6) + 1;
         this.lukittu = false;
-
     }
 
     public int getArvo() {

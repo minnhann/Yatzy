@@ -15,7 +15,6 @@ import yatzy.peli.Peli;
  * @author minnhann
  */
 public class AlunKayttoliittyma implements Runnable {
-
     private JFrame frame;
     private Peli peli;
 
@@ -54,7 +53,6 @@ public class AlunKayttoliittyma implements Runnable {
         container.add(teksti);
 
         AlunValikko valikko = new AlunValikko(this.peli);
-
         container.add(valikko);
     }
 

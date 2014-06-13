@@ -11,7 +11,6 @@ import yatzy.peli.Peli;
  * @author minnhann
  */
 public class AlunValikko extends JPanel {
-
     private Peli peli;
 
     /**
@@ -20,7 +19,6 @@ public class AlunValikko extends JPanel {
      * @param peli
      */
     public AlunValikko(Peli peli) {
-
         super(new GridLayout(1, 3));
         if (peli == null) {
             System.out.println("Peli on null");
@@ -33,8 +31,7 @@ public class AlunValikko extends JPanel {
      * Luodaan neljä nappulaa, joista käyttäjä voi valita, montako pelaajaa
      * (1-4) peliä pelaa.
      */
-    private void luoVaihtoehdot() {
-
+    private void luoVaihtoehdot() {        
         JButton yksi = new JButton("1 pelaaja");
         yksi.setActionCommand("1");
         add(yksi);
