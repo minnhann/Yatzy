@@ -78,3 +78,6 @@ Torstai 12.6 klo 14.15-16.30
 
 Torstai 12.6 klo 21.30-23.30
 - Puuttuvien testien kirjoittaminen sek‰ aiempien testien korjaus, uuden pit -raportin generointi, luokkakaavion p‰ivitys, sekvenssikaavioiden p‰ivitys sek‰ yksi uusi sekvenssikaavio, tuntikirjanpidon p‰ivitys. JavaDoc:n p‰ivitys ja jatkaminen sek‰ turhien luokkien poisto.
+
+Perjantai 13.6 klo 19-20.30
+- Pelin parantaminen: kierroslaskurin lis‰ys, vuorossa olevan pelaajan n‰ytt‰minen, lopputekstit ja voittaja. Lis‰ksi koodin siistint‰‰ turhia rivej‰ poistamalla sek‰ piirtoalustan huonosti nimettyjen nappien parempi nime‰minen.
