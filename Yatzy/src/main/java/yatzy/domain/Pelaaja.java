@@ -46,16 +46,18 @@ public class Pelaaja {
      * @return totuusarvo siitä, onko pistekohtaan jo lisätty pisteet
      */
     public boolean lisaaPisteita(int lisays, int pisteKohta) {
-        //jos pisteita jo lisätty, huomauta pelaajalle
         if (lisays >= 0 && onkoLisattyPisteita[pisteKohta] == false) {
             pisteet[pisteKohta] += lisays;
             onkoLisattyPisteita[pisteKohta] = true;
             pisteet[17] += lisays;
+            onkoLisattyPisteita[17] = true;
 
             if (pisteKohta < 6) {
                 pisteet[6] += lisays;
+                onkoLisattyPisteita[6] = true;
                 if (pisteet[6] >= 63) {
                     pisteet[7] += 25;
+                    onkoLisattyPisteita[7] = true;
                 }
             }
             return true;

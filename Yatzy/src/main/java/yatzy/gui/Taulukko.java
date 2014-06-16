@@ -36,8 +36,11 @@ public class Taulukko extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         if (columnIndex == 0) {
             return this.nimet[rowIndex];
+        } else if(peli.pelaajat.get(columnIndex -1).getOnkoLisattyPisteita(rowIndex)){
+            return peli.pelaajat.get(columnIndex - 1).getPisteet(rowIndex);
         }
-        return peli.pelaajat.get(columnIndex - 1).getPisteet(rowIndex);
+        return " ";
+        
     }
 
     @Override

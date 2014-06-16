@@ -1,6 +1,7 @@
 package yatzy.peli;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import yatzy.domain.Noppa;
 import yatzy.domain.Pelaaja;
 import yatzy.gui.PeliKayttoliittyma;
@@ -131,7 +132,7 @@ public class Peli {
     }
     
     public boolean loppuikoPeli(){
-        if(this.kierros == 19){
+        if(this.kierros == 16){
             return true;
         }
         return false;

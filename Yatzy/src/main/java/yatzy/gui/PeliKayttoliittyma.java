@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
 import yatzy.peli.Peli;
@@ -36,6 +37,7 @@ public class PeliKayttoliittyma implements Runnable {
         frame = new JFrame("Yatzy");
         frame.setLayout(new BorderLayout());
         frame.setPreferredSize(piirtoalusta.getPreferredSize());
+        frame.setResizable(false);
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,23 +65,13 @@ public class PeliKayttoliittyma implements Runnable {
     }
 
     public void luoHuomautus() {
-        frame = new JFrame("Huomautus");
-        frame.setPreferredSize(new Dimension(400, 200));
-
-        luoHuomautuksenKomponentit(frame.getContentPane());
-
-        frame.pack();
-        frame.setVisible(true);
-    }
-
-    private void luoHuomautuksenKomponentit(Container container) {
-        GridLayout layout = new GridLayout(2, 1);
-        container.setLayout(layout);
-        JTextArea teksti = new JTextArea("Valittu noppayhdistelmä on jo käytetty."
+        JOptionPane.showMessageDialog(this.frame, "Valittu noppayhdistelmä on jo käytetty."
                 + "\nValitse toinen yhdistelmä pisteiden kirjausta varten.");
-        teksti.setEditable(false);
-        container.add(teksti);
-
+    }
+    
+    public void lopputeksti(){
+        JOptionPane.showMessageDialog(this.frame, "Peli päättyi!"
+                + "\nPelin voitti " + peli.tarkistaVoittaja());
     }
 
 }
