@@ -3,6 +3,7 @@ package yatzy.peli;
 import java.util.ArrayList;
 import yatzy.domain.Noppa;
 import yatzy.domain.Pelaaja;
+import yatzy.gui.PeliKayttoliittyma;
 
 /**
  *
@@ -38,6 +39,8 @@ public class Peli {
     private int heitot;
     
     private int kierros;
+    
+    private PeliKayttoliittyma kayttis;
 
     /**
      * Konstruktorisa luodaan noppayhdistelmät, nopat, pelaajat, asetetaan
@@ -51,6 +54,7 @@ public class Peli {
         this.vuoro = 0;
         this.heitot = 1;
         this.kierros = 1;
+        kayttis = new PeliKayttoliittyma(this);
 
     }
 
@@ -178,8 +182,11 @@ public class Peli {
         } else if (monesko == 16) {
             pisteet = yhdistelmat.sattuma(nopat);
         }
-        pelaajat.get(vuoro).lisaaPisteita(pisteet, monesko);
-        vaihdaVuoroa();
+        if(pelaajat.get(vuoro).lisaaPisteita(pisteet, monesko)){
+            vaihdaVuoroa();
+        } else{
+            kayttis.luoHuomautus();
+        }
     }
 
 }

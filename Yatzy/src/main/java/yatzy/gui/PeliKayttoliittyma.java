@@ -8,7 +8,9 @@ package yatzy.gui;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import javax.swing.JFrame;
+import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
 import yatzy.peli.Peli;
 
@@ -18,6 +20,7 @@ import yatzy.peli.Peli;
  * @author minnhann
  */
 public class PeliKayttoliittyma implements Runnable {
+
     private JFrame frame;
     private Peli peli;
     private Piirtoalusta piirtoalusta;
@@ -49,9 +52,9 @@ public class PeliKayttoliittyma implements Runnable {
 
     /**
      * Lisätään piirtoalusta.
+     *
      * @param container komponentit lisätään
      */
-
     private void luoKomponentit(Container container) {
         container.add(piirtoalusta);
     }
@@ -62,6 +65,26 @@ public class PeliKayttoliittyma implements Runnable {
 
     public Peli getPeli() {
         return this.peli;
+    }
+
+    public void luoHuomautus() {
+        frame = new JFrame("Huomautus");
+        frame.setPreferredSize(new Dimension(400, 200));
+
+        luoHuomautuksenKomponentit(frame.getContentPane());
+
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+    private void luoHuomautuksenKomponentit(Container container) {
+        GridLayout layout = new GridLayout(2, 1);
+        container.setLayout(layout);
+        JTextArea teksti = new JTextArea("Valittu noppayhdistelmä on jo käytetty."
+                + "\nValitse toinen yhdistelmä pisteiden kirjausta varten.");
+        teksti.setEditable(false);
+        container.add(teksti);
+
     }
 
 }

@@ -43,8 +43,10 @@ public class Pelaaja {
      * Kasvatetaan pelaajan pisteitä
      *
      * @param lisays lisättävien pisteiden määrä
+     * @param pisteKohta kohta johon pisteet lisätään
+     * @return totuusarvo siitä, onko pistekohtaan jo lisätty pisteet
      */
-    public void lisaaPisteita(int lisays, int pisteKohta) {
+    public boolean lisaaPisteita(int lisays, int pisteKohta) {
         //jos pisteita jo lisätty, huomauta pelaajalle
         if (onkoLisattyPisteita[pisteKohta] == false) {
             pisteet[pisteKohta] += lisays;
@@ -57,9 +59,9 @@ public class Pelaaja {
                     pisteet[7] += 25;
                 }
             }
-        } else {
-            return;
-        }
+            return true;
+        } 
+        return false;
     }
 
 //    pisteet[0] ykkoset;

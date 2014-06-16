@@ -11,10 +11,10 @@ import yatzy.peli.Peli;
 public class Main {
     
 
-    public static void main (String[] args){
+    public static void main (String[] args){        
         Peli yatzy = new Peli();
         AlunKayttoliittyma ekaKayttis = new AlunKayttoliittyma(yatzy);
-        
+               
         SwingUtilities.invokeLater(ekaKayttis);
     }
     
