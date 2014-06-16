@@ -1,7 +1,6 @@
 package yatzy.peli;
 
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 import yatzy.domain.Noppa;
 import yatzy.domain.Pelaaja;
 import yatzy.gui.PeliKayttoliittyma;
@@ -84,7 +83,7 @@ public class Peli {
      * Heitetaan jokaista noppaa yksitellen
      */
     public void heitaNoppia() {
-        if (heitot == 3) {
+        if (heitot == 3 || kierros > 15) {
             return;
         }
         for (Noppa noppa : nopat) {

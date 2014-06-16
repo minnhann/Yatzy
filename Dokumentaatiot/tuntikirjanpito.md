@@ -81,3 +81,12 @@ Torstai 12.6 klo 21.30-23.30
 
 Perjantai 13.6 klo 19-20.30
 - Pelin parantaminen: kierroslaskurin lis‰ys, vuorossa olevan pelaajan n‰ytt‰minen, lopputekstit ja voittaja. Lis‰ksi koodin siistint‰‰ turhia rivej‰ poistamalla sek‰ piirtoalustan huonosti nimettyjen nappien parempi nime‰minen.
+
+Maanantai 16.6 klo 13-13.30
+- lisaaPelaajallePisteita -metodin toiminnallisuuden muuttaminen siten, ett‰ pelaajan valitessa jo k‰ytetty noppayhdistelm‰ vuoro ei vaihdu, vaan pelaaja saa asiasta huomautuksen.
+
+Maanantai 16.6 klo 16-17
+- Demo ja noppayhdistelm‰ -nappien sijoitus JPaneliin ulkoasun siistimiseksi.
+
+Maanantai 16.6 klo 19-20
+- Pelin parantelua: valitessa k‰ytetty noppayhdistelm‰ sek‰ pelin lopussa avautuvat ikkunat, noppien sijoittaminen samaan JPaneliin ulkoasun siistimiseksi. Taulukon parantaminen niin, ett‰ ilman pisteit‰ olevat kohdat ovat tyhj‰‰ (aiemmin nolla). Tuntikirjanpidon p‰ivitys.

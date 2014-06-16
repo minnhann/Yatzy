@@ -71,7 +71,7 @@ public class PeliKayttoliittyma implements Runnable {
     
     public void lopputeksti(){
         JOptionPane.showMessageDialog(this.frame, "Peli päättyi!"
-                + "\nPelin voitti " + peli.tarkistaVoittaja());
+                + "\nPelin voitti " + peli.tarkistaVoittaja() + "!");
     }
 
 }
