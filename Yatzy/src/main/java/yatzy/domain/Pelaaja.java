@@ -1,6 +1,5 @@
 package yatzy.domain;
 
-import java.util.ArrayList;
 
 /**
  * Pelaaja sisältää pelaajan nimen ja pistemäärän
@@ -46,7 +45,7 @@ public class Pelaaja {
      */
     public void lisaaPisteita(int lisays, int pisteKohta) {
         //jos pisteita jo lisätty, huomauta pelaajalle
-        if (onkoLisattyPisteita[pisteKohta] == false) {
+        if (lisays >= 0 && onkoLisattyPisteita[pisteKohta] == false) {
             pisteet[pisteKohta] += lisays;
             onkoLisattyPisteita[pisteKohta] = true;
             pisteet[17] += lisays;
@@ -57,7 +56,7 @@ public class Pelaaja {
                     pisteet[7] += 25;
                 }
             }
-        } else {
+        } else if(onkoLisattyPisteita[pisteKohta] == false){
             return;
         }
     }
