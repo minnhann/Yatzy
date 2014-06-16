@@ -17,6 +17,7 @@ import yatzy.peli.Peli;
  * @author minnhann
  */
 public class Piirtoalusta extends javax.swing.JPanel {
+
     private JFrame frame;
     private PeliKayttoliittyma kayttis;
     private ImageIcon[] kuvat;
@@ -276,40 +277,25 @@ public class Piirtoalusta extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(vuorossa)
                             .addComponent(kierros, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(yksiPari)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(ykkoset, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-                                .addComponent(kakkoset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(kolmoset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(neloset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(vitoset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(kuutoset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(neljaSamaa)
-                                            .addComponent(pieniSuora)
-                                            .addComponent(kaksiParia))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(suuriSuora)
-                                            .addGap(7, 7, 7)))
-                                    .addComponent(taysiKasi)
-                                    .addComponent(yatzy, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(sattuma, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(15, 15, 15))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(kolmeSamaa)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
+                .addGap(62, 62, 62)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(yksiPari)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(ykkoset, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                        .addComponent(kakkoset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(kolmoset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(neloset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(vitoset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(kuutoset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(kaksiParia)
+                    .addComponent(kolmeSamaa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(neljaSamaa)
+                    .addComponent(pieniSuora)
+                    .addComponent(suuriSuora)
+                    .addComponent(taysiKasi)
+                    .addComponent(yatzy, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sattuma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,14 +343,14 @@ public class Piirtoalusta extends javax.swing.JPanel {
                                 .addComponent(noppa4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(yksiPari)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(18, 18, 18)
                                 .addComponent(kaksiParia)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(18, 18, 18)
                                 .addComponent(kolmeSamaa))))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(neljaSamaa)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(noppa5)
@@ -372,25 +358,24 @@ public class Piirtoalusta extends javax.swing.JPanel {
                         .addComponent(heita)
                         .addGap(42, 42, 42))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(pieniSuora)
-                            .addComponent(kierros, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(kierros, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pieniSuora))
+                        .addGap(18, 18, 18)
                         .addComponent(suuriSuora)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(taysiKasi)
-                            .addComponent(vuorossa))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(vuorossa)
+                            .addComponent(taysiKasi))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(yatzy)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(sattuma)
-                        .addContainerGap(42, Short.MAX_VALUE))))
+                        .addContainerGap(39, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void noppa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noppa5ActionPerformed
-        // TODO add your handling code here:
         this.nopat.get(noppa5).vaihdaNopanLukitus();
         if (this.nopat.get(noppa5).onkoLukittu()) {
             noppa5.setBackground(Color.black);
@@ -400,7 +385,6 @@ public class Piirtoalusta extends javax.swing.JPanel {
     }//GEN-LAST:event_noppa5ActionPerformed
 
     private void noppa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noppa3ActionPerformed
-        // TODO add your handling code here:
         this.nopat.get(noppa3).vaihdaNopanLukitus();
         if (this.nopat.get(noppa3).onkoLukittu()) {
             noppa3.setBackground(Color.black);
@@ -411,7 +395,6 @@ public class Piirtoalusta extends javax.swing.JPanel {
     }//GEN-LAST:event_noppa3ActionPerformed
 
     private void noppa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noppa1ActionPerformed
-        // TODO add your handling code here:
         this.nopat.get(noppa1).vaihdaNopanLukitus();
         if (this.nopat.get(noppa1).onkoLukittu()) {
             noppa1.setBackground(Color.black);
@@ -421,7 +404,6 @@ public class Piirtoalusta extends javax.swing.JPanel {
     }//GEN-LAST:event_noppa1ActionPerformed
 
     private void heitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_heitaActionPerformed
-        // TODO add your handling code here:
         peli.heitaNoppia();
         asetaNoppienKuvat();
 
@@ -429,7 +411,6 @@ public class Piirtoalusta extends javax.swing.JPanel {
     }//GEN-LAST:event_heitaActionPerformed
 
     private void noppa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noppa4ActionPerformed
-        // TODO add your handling code here:
         this.nopat.get(noppa4).vaihdaNopanLukitus();
         if (this.nopat.get(noppa4).onkoLukittu()) {
             noppa4.setBackground(Color.black);
@@ -439,7 +420,6 @@ public class Piirtoalusta extends javax.swing.JPanel {
     }//GEN-LAST:event_noppa4ActionPerformed
 
     private void noppa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noppa2ActionPerformed
-        // TODO add your handling code here:
         this.nopat.get(noppa2).vaihdaNopanLukitus();
         if (this.nopat.get(noppa2).onkoLukittu()) {
             noppa2.setBackground(Color.black);
@@ -449,7 +429,6 @@ public class Piirtoalusta extends javax.swing.JPanel {
     }//GEN-LAST:event_noppa2ActionPerformed
 
     private void yksiPariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yksiPariActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(8);
         paivitaTaulukko();
     }//GEN-LAST:event_yksiPariActionPerformed
@@ -461,83 +440,70 @@ public class Piirtoalusta extends javax.swing.JPanel {
     }//GEN-LAST:event_yatzyActionPerformed
 
     private void ykkosetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ykkosetActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(0);
         paivitaTaulukko();
     }//GEN-LAST:event_ykkosetActionPerformed
 
     private void kakkosetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kakkosetActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(1);
         paivitaTaulukko();
     }//GEN-LAST:event_kakkosetActionPerformed
 
     private void kolmosetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kolmosetActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(2);
         paivitaTaulukko();
     }//GEN-LAST:event_kolmosetActionPerformed
 
     private void nelosetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nelosetActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(3);
         paivitaTaulukko();
     }//GEN-LAST:event_nelosetActionPerformed
 
     private void vitosetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitosetActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(4);
         paivitaTaulukko();
     }//GEN-LAST:event_vitosetActionPerformed
 
     private void kuutosetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kuutosetActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(5);
         paivitaTaulukko();
     }//GEN-LAST:event_kuutosetActionPerformed
 
     private void kaksiPariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kaksiPariaActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(9);
         paivitaTaulukko();
     }//GEN-LAST:event_kaksiPariaActionPerformed
 
     private void kolmeSamaaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kolmeSamaaActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(10);
         paivitaTaulukko();
     }//GEN-LAST:event_kolmeSamaaActionPerformed
 
     private void neljaSamaaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_neljaSamaaActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(11);
         paivitaTaulukko();
     }//GEN-LAST:event_neljaSamaaActionPerformed
 
     private void pieniSuoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pieniSuoraActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(12);
         paivitaTaulukko();
     }//GEN-LAST:event_pieniSuoraActionPerformed
 
     private void suuriSuoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suuriSuoraActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(13);
         paivitaTaulukko();
     }//GEN-LAST:event_suuriSuoraActionPerformed
 
     private void taysiKasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taysiKasiActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(14);
         paivitaTaulukko();
     }//GEN-LAST:event_taysiKasiActionPerformed
 
     private void sattumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sattumaActionPerformed
-        // TODO add your handling code here:
         peli.lisaaPelaajallePisteita(16);
         paivitaTaulukko();
     }//GEN-LAST:event_sattumaActionPerformed
-    
+
     /**
      * Asettaa jokaiselle nopalle sen silmälukua vastaavan kuvan. Lisäksi
      * asettaa taustavärin mustaksi tai harmaaksi.
@@ -562,26 +528,26 @@ public class Piirtoalusta extends javax.swing.JPanel {
     }
 
     /**
-     * Päivittää tulostaulukon ja asettaa noppien kuvat uudelleen sekä
-     * asettaa kierroksen numeron ja vuorossa olevan pelaajan nimen.
+     * Päivittää tulostaulukon ja asettaa noppien kuvat uudelleen sekä asettaa
+     * kierroksen numeron ja vuorossa olevan pelaajan nimen.
      */
     private void paivitaTaulukko() {
         tulosTaulukko.setModel(new Taulukko(this.peli));
         asetaNoppienKuvat();
-        if(!peli.loppuikoPeli()){
+        if (!peli.loppuikoPeli()) {
             asetaTekstit();
-        } else{
+        } else {
             asetaLopputeksti();
         }
-        
+
     }
-    
-    private void asetaTekstit(){
+
+    private void asetaTekstit() {
         kierros.setText("Kierros:  " + peli.getKierros());
-        vuorossa.setText("Vuorossa: Pelaaja  " + (peli.getVuoro() +1));
+        vuorossa.setText("Vuorossa: Pelaaja  " + (peli.getVuoro() + 1));
     }
-    
-    private void asetaLopputeksti(){
+
+    private void asetaLopputeksti() {
         kierros.setText("Peli päättyi!");
         vuorossa.setText("Pelin voitti  " + peli.tarkistaVoittaja() + "!");
     }
