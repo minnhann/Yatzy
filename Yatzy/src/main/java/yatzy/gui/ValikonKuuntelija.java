@@ -6,35 +6,39 @@ import javax.swing.SwingUtilities;
 import yatzy.peli.Peli;
 
 /**
- * Kuuntelee alun valikosta valittua pelaajien lukumäärää
+ * Kuuntelee alun valikosta valittua pelaajien lukumäärää.
  *
  * @author minnhann
  */
-public class ValikonKuuntelija implements ActionListener{
-    private Peli peli;
-    
+public class ValikonKuuntelija implements ActionListener {
+
     /**
-     * Aseteaan valikon kuuntelijalle peli, johon kuuntelu liittyy
-     * 
-     * @param yatzy peli, jota käsitellään
+     * Peli jota pelataan.
      */
-    public ValikonKuuntelija(Peli yatzy){
+    private Peli peli;
+
+    /**
+     * Aseteaan valikon kuuntelijalle peli, johon kuuntelu liittyy.
+     *
+     * @param yatzy peli, jota käsitellään.
+     */
+    public ValikonKuuntelija(Peli yatzy) {
         this.peli = yatzy;
     }
 
     /**
-     * Kuuntelee, mikä pelaajien lukumäärä valitaan ja välittää tiedon
-     * peli -luokalle. Luo pelikäyttöliittymän.
-     * 
-     * @param e käyttäjän napin klikkaus
+     * Kuuntelee, mikä pelaajien lukumäärä valitaan ja välittää tiedon peli
+     * -luokalle. Luo pelikäyttöliittymän.
+     *
+     * @param e käyttäjän napin klikkaus.
      */
     @Override
     public void actionPerformed(ActionEvent e) {
         int pelaajat = Integer.parseInt(e.getActionCommand());
         this.peli.luoPelaajat(pelaajat);
-        
+
         PeliKayttoliittyma kayttis = new PeliKayttoliittyma(this.peli);
         SwingUtilities.invokeLater(kayttis);
     }
-    
+
 }

@@ -1,18 +1,30 @@
 package yatzy.domain;
 
-
 /**
- * Pelaaja sisältää pelaajan nimen ja pistemäärän
+ * Pelaaja sisältää pelaajan nimen, pistemäärän eriteltynä ja kokonaisuudessaan
+ * sekä tiedon, mitä noppayhdistelmiä pelaaja on jo kerännyt.
  *
  * @author minnhann
  */
 public class Pelaaja {
+
+    /**
+     * Pelaajan nimi.
+     */
     private String nimi;
+    /**
+     * Taulukko, johon kerätään pelaajan pisteet.
+     */
     private int[] pisteet;
+    /**
+     * Taulukko, jossa säilytetään tieto siitä, mitä pisteitä pelaaja on
+     * jo kerännyt.
+     */
     private boolean[] onkoLisattyPisteita;
 
     /**
-     * Konstruktorissa asetetaan pelaajalle nimi sekä asetetaan pisteiksi nolla.
+     * Konstruktorissa asetetaan pelaajalle nimi, luodaan pistetaulukko ja
+     * asetetaan jokainen pisteyhdistelmä käyttämättömäksi (false).
      *
      * @param nimi pelaajan nimi
      */
@@ -32,6 +44,10 @@ public class Pelaaja {
 
     public int getPisteet(int mitkaPisteet) {
         return pisteet[mitkaPisteet];
+    }
+    
+    public void setPisteet(int pistemaara){
+        pisteet[17] = pistemaara;
     }
 
     public boolean getOnkoLisattyPisteita(int kohta) {
@@ -55,13 +71,14 @@ public class Pelaaja {
             if (pisteKohta < 6) {
                 pisteet[6] += lisays;
                 onkoLisattyPisteita[6] = true;
+                
                 if (pisteet[6] >= 63) {
                     pisteet[7] += 25;
                     onkoLisattyPisteita[7] = true;
                 }
             }
             return true;
-        } 
+        }
         return false;
     }
 

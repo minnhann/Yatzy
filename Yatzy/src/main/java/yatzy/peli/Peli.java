@@ -6,8 +6,6 @@ import yatzy.domain.Pelaaja;
 import yatzy.gui.PeliKayttoliittyma;
 
 /**
- *
- *
  * Peli -luokka sisältää pelin oleelliset toiminnot sekä säätelee pelin
  * etenemistä
  *
@@ -16,35 +14,33 @@ import yatzy.gui.PeliKayttoliittyma;
 public class Peli {
 
     /**
-     * Noppayhdistelmät, jossa talletettuna erilaiset noppien kombinaatiot
+     * Noppayhdistelmät, jossa talletettuna erilaiset noppien kombinaatiot.
      */
     private NoppaYhdistelmat yhdistelmat;
-
     /**
-     * Lista pelin nopista, 5 kappaletta
+     * Lista pelin nopista, 5 kappaletta.
      */
     public Noppa[] nopat;
-
     /**
-     * Lista pelaajista, 1-4
+     * Lista pelaajista, lukumäärä 1-4.
      */
     public ArrayList<Pelaaja> pelaajat;
     /**
-     * Kertoo kenen vuoro menossa
+     * Kertoo kenen pelaajan vuoro on menossa.
      */
     private int vuoro;
     /**
-     * Pitää kirjaa heitoista jokaisen vuoron aikana
+     * Pitää kirjaa heitoista jokaisen vuoron aikana.
      */
     private int heitot;
-    
+    /**
+     * Laskee, monesko kierros peliä menossa.
+     */
     private int kierros;
-    
-    private PeliKayttoliittyma kayttis;
 
     /**
      * Konstruktorisa luodaan noppayhdistelmät, nopat, pelaajat, asetetaan
-     * pelivuoro ensimmäiselle pelaajalle ja asetetaan heitot nollaan
+     * pelivuoro ensimmäiselle pelaajalle ja asetetaan heitot nollaan.
      */
     public Peli() {
         yhdistelmat = new NoppaYhdistelmat();
@@ -54,8 +50,6 @@ public class Peli {
         this.vuoro = 0;
         this.heitot = 1;
         this.kierros = 1;
-        kayttis = new PeliKayttoliittyma(this);
-
     }
 
     /**
@@ -65,13 +59,12 @@ public class Peli {
         for (int i = 0; i < nopat.length; i++) {
             nopat[i] = new Noppa();
         }
-
     }
 
     /**
-     * Luodaan pelaajat ja talletetaan listaan
+     * Luodaan pelaajat ja talletetaan heidät listaan.
      *
-     * @param lkm pelaajien lukumäärä
+     * @param lkm pelaajien lukumäärä.
      */
     public void luoPelaajat(int lkm) {
         for (int i = 0; i < lkm; i++) {
@@ -80,7 +73,8 @@ public class Peli {
     }
 
     /**
-     * Heitetaan jokaista noppaa yksitellen
+     * Heitetaan jokaista noppaa yksitellen jos kierroksia ja heittoja on vielä
+     * jäljellä.
      */
     public void heitaNoppia() {
         if (heitot == 3 || kierros > 15) {
@@ -95,17 +89,18 @@ public class Peli {
     /**
      * Vaihdetaan pelaajan vuoroa järjestyksessä seuraavalle pelaajalle ja
      * arvotaan seuraavalle pelaajalle uudet nopat. Lisäksi asetetaan heittojen
-     * lukumäärä yhteen vastaamaan seuraavan pelaajan tilannetta.
+     * lukumääräksi yksi vastaamaan seuraavan pelaajan alkutilannetta. Jos vuoro
+     * siirtyy ensimmäiselle pelaajalle, kasvatetaan kierroksien lukumäärää.
      */
     public void vaihdaVuoroa() {
         this.vuoro = (this.vuoro + 1) % pelaajat.size();
         arvoUudetNopatSeuraavalleVuorolle();
         this.heitot = 1;
-        if(this.vuoro == 0){
+        if (this.vuoro == 0) {
             this.kierros++;
         }
     }
-    
+
     /**
      * Arvotaan uudet nopat, jotka ovat kaikki lukitsemattomia.
      */
@@ -125,41 +120,57 @@ public class Peli {
     public int getVuoro() {
         return this.vuoro;
     }
-    
-    public int getKierros(){
+
+    public int getKierros() {
         return this.kierros;
     }
     
-    public boolean loppuikoPeli(){
-        if(this.kierros == 16){
+    public void setKierros(int luku){
+        this.kierros = luku;
+    }
+
+    /**
+     * Tarkistaa, onko kierroksia vielä jäljellä.
+     */
+    public boolean loppuikoPeli() {
+        if (this.kierros == 16) {
             return true;
         }
         return false;
     }
-    
-    public String tarkistaVoittaja(){
+
+    /**
+     * Tarkistetaan pelin voittaja. Jos peli päättyy tasapeliin, palautetaan
+     * voittajana kaikkien voittajien nimet.
+     * 
+     * @return String, jossa voittajan/voittajien nimi/nimet.
+     */
+    public String tarkistaVoittaja() {
         String voittaja = "";
         int parhaatPisteet = 0;
-        
-        for(Pelaaja pelaaja : this.pelaajat){
-            if(pelaaja.getPisteet(17) > parhaatPisteet){
+
+        for (Pelaaja pelaaja : this.pelaajat) {
+            if (pelaaja.getPisteet(17) > parhaatPisteet) {
                 voittaja = pelaaja.getNimi();
                 parhaatPisteet = pelaaja.getPisteet(17);
-            } else if(pelaaja.getPisteet(17) == parhaatPisteet){
+            } else if (pelaaja.getPisteet(17) == parhaatPisteet) {
                 voittaja += " ja " + pelaaja.getNimi();
             }
         }
         return voittaja;
     }
+
     /**
      *
      * Kasvatetaan vuorossa olevan pelaajan pisteita, ja lisätään uusi
      * pistemäärä oikeaan kohtaan pelaajan pistetaulukkoa. Lopuksi vaihdetaan
-     * vuoroa.
+     * vuoroa. Jos pelaaja on jo käyttänyt valitsemansa noppayhdistelmän,
+     * huomautetaan pelaajalle vuoroa vaihtamatta.
      *
-     * @param monesko mihin pistekohtaan pisteitä halutaan lisätä
+     * @param monesko mihin pistekohtaan pisteitä halutaan lisätä.
+     * @param kayttis pelikäyttöliittymä, jonka kautta huomautus luodaan.
      */
-    public void lisaaPelaajallePisteita(int monesko) {
+    public void lisaaPelaajallePisteita(int monesko, PeliKayttoliittyma kayttis) {
         int pisteet = 0;
         if (monesko == 0 || monesko == 1 || monesko == 2 || monesko == 3 || monesko == 4 || monesko == 5) {
             pisteet = (monesko + 1) * yhdistelmat.montakoSamaaNumeroa(nopat, monesko + 1);
@@ -182,9 +193,9 @@ public class Peli {
         } else if (monesko == 16) {
             pisteet = yhdistelmat.sattuma(nopat);
         }
-        if(pelaajat.get(vuoro).lisaaPisteita(pisteet, monesko)){
+        if (pelaajat.get(vuoro).lisaaPisteita(pisteet, monesko)) {
             vaihdaVuoroa();
-        } else{
+        } else {
             kayttis.luoHuomautus();
         }
     }

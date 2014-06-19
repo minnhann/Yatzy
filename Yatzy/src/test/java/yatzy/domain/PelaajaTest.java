@@ -88,6 +88,13 @@ public class PelaajaTest {
     public void alussaOnkoLisattyPisteitaOnFalse(){
         assertEquals(false, pelaaja.getOnkoLisattyPisteita(0));
         assertEquals(false, pelaaja.getOnkoLisattyPisteita(17));
+        assertEquals(false, pelaaja.getOnkoLisattyPisteita(10));
     }
+    
+    @Test
+    public void negatiivisiaPisteitaEiVoidaLisata(){
+        assertEquals(false, pelaaja.lisaaPisteita(-3, 0));
+    }
+    
 
 }

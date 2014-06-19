@@ -47,8 +47,13 @@ public class PeliTest {
     }
 
     @Test
-    public void alussaHeitotNolla() {
+    public void alussaHeitotYksi() {
         assertEquals(1, peli.getHeitot());
+    }
+
+    @Test
+    public void alussaKierroksenaYksi() {
+        assertEquals(1, peli.getKierros());
     }
 
     @Test
@@ -75,7 +80,6 @@ public class PeliTest {
         peli.vaihdaVuoroa();
 
         assertEquals(1, peli.getVuoro());
-
     }
 
     @Test
@@ -111,7 +115,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(0);
+        peli.lisaaPelaajallePisteita(0, null);
 
         assertEquals(3, peli.pelaajat.get(0).getPisteet(0));
     }
@@ -123,7 +127,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(6);
         peli.nopat[4].setArvo(5);
-        peli.lisaaPelaajallePisteita(0);
+        peli.lisaaPelaajallePisteita(0, null);
 
         assertEquals(0, peli.pelaajat.get(0).getPisteet(0));
     }
@@ -135,7 +139,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(6);
-        peli.lisaaPelaajallePisteita(8);
+        peli.lisaaPelaajallePisteita(8, null);
 
         assertEquals(2, peli.pelaajat.get(0).getPisteet(8));
     }
@@ -147,7 +151,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(5);
-        peli.lisaaPelaajallePisteita(8);
+        peli.lisaaPelaajallePisteita(8, null);
 
         assertEquals(0, peli.pelaajat.get(0).getPisteet(8));
     }
@@ -159,7 +163,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(3);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(9);
+        peli.lisaaPelaajallePisteita(9, null);
 
         assertEquals(8, peli.pelaajat.get(0).getPisteet(9));
     }
@@ -171,7 +175,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(9);
+        peli.lisaaPelaajallePisteita(9, null);
 
         assertEquals(0, peli.pelaajat.get(0).getPisteet(9));
     }
@@ -183,7 +187,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(10);
+        peli.lisaaPelaajallePisteita(10, null);
 
         assertEquals(3, peli.pelaajat.get(0).getPisteet(10));
     }
@@ -195,7 +199,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(10);
+        peli.lisaaPelaajallePisteita(10, null);
 
         assertEquals(0, peli.pelaajat.get(0).getPisteet(10));
     }
@@ -207,7 +211,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(1);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(11);
+        peli.lisaaPelaajallePisteita(11, null);
 
         assertEquals(4, peli.pelaajat.get(0).getPisteet(11));
     }
@@ -219,7 +223,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(11);
+        peli.lisaaPelaajallePisteita(11, null);
 
         assertEquals(0, peli.pelaajat.get(0).getPisteet(11));
     }
@@ -231,7 +235,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(5);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(3);
-        peli.lisaaPelaajallePisteita(12);
+        peli.lisaaPelaajallePisteita(12, null);
 
         assertEquals(15, peli.pelaajat.get(0).getPisteet(12));
     }
@@ -243,7 +247,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(12);
+        peli.lisaaPelaajallePisteita(12, null);
 
         assertEquals(0, peli.pelaajat.get(0).getPisteet(12));
     }
@@ -255,7 +259,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(5);
-        peli.lisaaPelaajallePisteita(13);
+        peli.lisaaPelaajallePisteita(13, null);
 
         assertEquals(20, peli.pelaajat.get(0).getPisteet(13));
     }
@@ -267,7 +271,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(13);
+        peli.lisaaPelaajallePisteita(13, null);
 
         assertEquals(0, peli.pelaajat.get(0).getPisteet(13));
     }
@@ -279,7 +283,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(3);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(14);
+        peli.lisaaPelaajallePisteita(14, null);
 
         assertEquals(9, peli.pelaajat.get(0).getPisteet(14));
     }
@@ -291,7 +295,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(14);
+        peli.lisaaPelaajallePisteita(14, null);
 
         assertEquals(0, peli.pelaajat.get(0).getPisteet(14));
     }
@@ -303,7 +307,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(1);
         peli.nopat[3].setArvo(1);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(15);
+        peli.lisaaPelaajallePisteita(15, null);
 
         assertEquals(50, peli.pelaajat.get(0).getPisteet(15));
     }
@@ -315,7 +319,7 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(15);
+        peli.lisaaPelaajallePisteita(15, null);
 
         assertEquals(0, peli.pelaajat.get(0).getPisteet(15));
     }
@@ -327,15 +331,80 @@ public class PeliTest {
         peli.nopat[2].setArvo(3);
         peli.nopat[3].setArvo(4);
         peli.nopat[4].setArvo(1);
-        peli.lisaaPelaajallePisteita(16);
+        peli.lisaaPelaajallePisteita(16, null);
 
         assertEquals(10, peli.pelaajat.get(0).getPisteet(16));
     }
-    
+
     @Test
-    public void pisteidenLisaysVaihtaaVuoroa(){
-        peli.lisaaPelaajallePisteita(0);
-        
+    public void pisteidenLisaysVaihtaaVuoroa() {
+        peli.lisaaPelaajallePisteita(0, null);
+
         assertEquals(1, peli.getVuoro());
     }
+    
+    @Test
+    public void josVuoroVaihtuuEnsimmaisellePelaajalleKierroksetKasvavat(){
+        peli.vaihdaVuoroa();
+        peli.vaihdaVuoroa();
+        
+        assertEquals(2, peli.getKierros());
+    }
+
+    @Test
+    public void josKierroksiaJaljellaNiinPeliJatkuu() {
+        assertEquals(false, peli.loppuikoPeli());
+
+        peli.setKierros(15);
+        assertEquals(false, peli.loppuikoPeli());
+    }
+
+    @Test
+    public void josKierroksetLoppuivatNiinPeliPaattyy() {
+        peli.setKierros(16);
+        assertEquals(true, peli.loppuikoPeli());
+    }
+
+    @Test
+    public void tarkistaVoittajaLoytaaVoittajan() {
+        peli.pelaajat.get(0).setPisteet(50);
+        peli.pelaajat.get(1).setPisteet(100);
+
+        assertEquals("Pelaaja 2", peli.tarkistaVoittaja());
+    }
+
+    @Test
+    public void josTasapeliMolemmatListataanVoittajina() {
+        peli.pelaajat.get(0).setPisteet(100);
+        peli.pelaajat.get(1).setPisteet(100);
+        
+        assertEquals("Pelaaja 1 ja Pelaaja 2", peli.tarkistaVoittaja());
+    }
+    
+    @Test
+    public void noppiaEiHeitetaJosHeitettyJoKolmesti(){
+        peli.heitaNoppia();
+        peli.heitaNoppia();
+        int ekanNopanArvo = peli.nopat[0].getArvo();
+        peli.heitaNoppia();
+        
+        assertEquals(ekanNopanArvo, peli.nopat[0].getArvo());
+    }
+    
+    @Test
+    public void noppiaEiHeitetaJosKierroksiaEiOleJaljella(){
+        int ekanNopanArvo = peli.nopat[0].getArvo();
+        peli.setKierros(16);
+        peli.heitaNoppia();
+        
+        assertEquals(ekanNopanArvo, peli.nopat[0].getArvo());
+    }
+    
+    @Test
+    public void vuoroaVaihdettaessaKierrosEiKasvaJosVuorossaEiOleEkaPelaaja(){
+        peli.vaihdaVuoroa();
+        
+        assertEquals(1, peli.getKierros());
+    }
+    
 }

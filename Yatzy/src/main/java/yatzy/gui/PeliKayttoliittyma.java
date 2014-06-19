@@ -2,30 +2,36 @@ package yatzy.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
 import yatzy.peli.Peli;
 
 /**
- * Pelin käyttöliittymä
+ * Pelin käyttöliittymä.
  *
  * @author minnhann
  */
 public class PeliKayttoliittyma implements Runnable {
 
+    /**
+     * Frame.
+     */
     private JFrame frame;
+    /**
+     * Peli jota pelataan.
+     */
     private Peli peli;
+    /**
+     * Piirtoalusta, joka piirtää pelin.
+     */
     private Piirtoalusta piirtoalusta;
 
     /**
      * Konstruktorissa asetetaan peliksi main:ssa luotu peli sekä luodaan
-     * piirtoalusta
+     * piirtoalusta.
      *
-     * @param yatzy peli, jota käsitellään
+     * @param yatzy peli, jota käsitellään.
      */
     public PeliKayttoliittyma(Peli yatzy) {
         this.peli = yatzy;
@@ -50,7 +56,7 @@ public class PeliKayttoliittyma implements Runnable {
     /**
      * Lisätään piirtoalusta.
      *
-     * @param container komponentit lisätään
+     * @param container komponentit lisätään.
      */
     private void luoKomponentit(Container container) {
         container.add(piirtoalusta);
@@ -64,12 +70,19 @@ public class PeliKayttoliittyma implements Runnable {
         return this.peli;
     }
 
+    /**
+     * Luodaan huomautus, jos pelaaja yrittää lisätä pisteitä jo käyttämäänsä
+     * pistekohtaan.
+     */
     public void luoHuomautus() {
         JOptionPane.showMessageDialog(this.frame, "Valittu noppayhdistelmä on jo käytetty."
                 + "\nValitse toinen yhdistelmä pisteiden kirjausta varten.");
     }
-    
-    public void lopputeksti(){
+
+    /**
+     * Luodaan lopputeksti, jossa lukee pelin voittaneen pelaajan nimi.
+     */
+    public void lopputeksti() {
         JOptionPane.showMessageDialog(this.frame, "Peli päättyi!"
                 + "\nPelin voitti " + peli.tarkistaVoittaja() + "!");
     }

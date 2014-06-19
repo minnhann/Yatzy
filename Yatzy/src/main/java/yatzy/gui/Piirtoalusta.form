@@ -19,7 +19,7 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace pref="40" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="taulukko" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="kierros" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
@@ -27,14 +27,15 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="vaihtoehdot" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
                       <Component id="heita" min="-2" pref="180" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="noppienKuvat" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -157,8 +158,8 @@
               <Component id="pieniSuora" alignment="0" max="32767" attributes="0"/>
               <Component id="suuriSuora" alignment="1" max="32767" attributes="0"/>
               <Component id="taysiKasi" alignment="1" max="32767" attributes="0"/>
-              <Component id="sattuma" max="32767" attributes="0"/>
               <Component id="yatzy" alignment="1" max="32767" attributes="0"/>
+              <Component id="sattuma" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -191,9 +192,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="taysiKasi" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="sattuma" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="yatzy" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="sattuma" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -280,22 +281,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="suuriSuoraActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="yatzy">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Yatzy"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="yatzyActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="sattuma">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Sattuma"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sattumaActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="taysiKasi">
           <Properties>
             <Property name="text" type="java.lang.String" value="T&#xe4;ysi k&#xe4;si"/>
@@ -318,6 +303,22 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="yksiPariActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="yatzy">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Yatzy"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="yatzyActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="sattuma">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sattuma"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sattumaActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

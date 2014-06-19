@@ -9,12 +9,19 @@ import yatzy.peli.Peli;
  * @author minnhann
  */
 public class Taulukko extends AbstractTableModel {
+
+    /**
+     * Peli jota pelataan.
+     */
     private Peli peli;
+    /**
+     * Lista eri noppayhdistelmien nimistä.
+     */
     private String[] nimet;
 
     /**
-     * Konstruktorisa asetetaan peliksi tämä peli, luodaan nimet -taulukko johon
-     * listataan eri noppayhdistelmien nimet.
+     * Konstruktorisa asetetaan peliksi pelattava peli, luodaan nimet -taulukko
+     * johon listataan eri noppayhdistelmien nimet.
      */
     public Taulukko(Peli peli) {
         this.peli = peli;
@@ -36,11 +43,11 @@ public class Taulukko extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         if (columnIndex == 0) {
             return this.nimet[rowIndex];
-        } else if(peli.pelaajat.get(columnIndex -1).getOnkoLisattyPisteita(rowIndex)){
+        } else if (peli.pelaajat.get(columnIndex - 1).getOnkoLisattyPisteita(rowIndex)) {
             return peli.pelaajat.get(columnIndex - 1).getPisteet(rowIndex);
         }
         return " ";
-        
+
     }
 
     @Override

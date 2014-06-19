@@ -11,21 +11,21 @@ import java.util.Random;
 public class Noppa {
 
     /**
-     * Nopan silmäluku, väliltä 1-6
+     * Nopan silmäluku, arvo väliltä 1-6.
      */
     private int arvo;
     /**
-     * Random, jolla arvotaan nopan silmäluku
+     * Random, jolla arvotaan nopan silmäluku.
      */
     private Random random = new Random();
     /**
-     * Onko noppa lukittu, eli voidaanko sitä heittää vai ei
+     * Onko noppa lukittu, eli voidaanko sitä heittää vai ei.
      */
     private boolean lukittu;
 
     /**
      * Konstruktorissa luodaan noppa, se saa jonkin arvon väliltä 1-6 ja se
-     * asetetaan lukitsemattomaksi
+     * asetetaan lukitsemattomaksi.
      */
     public Noppa() {
         this.arvo = random.nextInt(6) + 1;
@@ -42,7 +42,7 @@ public class Noppa {
 
     /**
      * Jos noppa ei ole lukittu, heitetään sitä eli arvotaan uusi arvo väliltä
-     * 1-6
+     * 1-.
      */
     public void heitaNoppaa() {
         if (this.lukittu) {
@@ -64,10 +64,6 @@ public class Noppa {
      * Lukitsee lukitsemattoman nopan sekä vapauttaa lukitun nopan.
      */
     public void vaihdaNopanLukitus() {
-        if (!this.lukittu) {
-            this.lukittu = true;
-        } else {
-            this.lukittu = false;
-        }
+        this.lukittu = !this.lukittu;
     }
 }

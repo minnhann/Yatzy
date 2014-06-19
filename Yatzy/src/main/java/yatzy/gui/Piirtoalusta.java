@@ -12,20 +12,36 @@ import yatzy.peli.Peli;
 
 /**
  * Piirtoalusta piirtää peli-ikkunaan nopat, tilannetaulukon, heitä -napin sekä
- * eri vaihtoehdoille napit.
+ * eri pistevaihtoehdoille napit.
  *
  * @author minnhann
  */
 public class Piirtoalusta extends javax.swing.JPanel {
 
+    /**
+     * Frame.
+     */
     private JFrame frame;
+    /**
+     * Pelin pelikäyttöliittymä.
+     */
     private PeliKayttoliittyma kayttis;
+    /**
+     * Lista noppien kuvista.
+     */
     private ImageIcon[] kuvat;
+    /**
+     * Peli jota pelataan.
+     */
     private Peli peli;
+    /**
+     * Lista napeista ja niihin liittyvistä nopista.
+     */
     private HashMap<JButton, Noppa> nopat;
 
     /**
-     * Creates new form NewJPanel
+     * Asetetaan piirtoalustalle peli, kayttoliittymä ja frame, luodaan noppien
+     * kuvat, asetetaan ne listaan ja päivitetään taulukko.
      *
      * @param frame pelin frame
      * @param kayttis pelin käyttöliittymä
@@ -85,11 +101,11 @@ public class Piirtoalusta extends javax.swing.JPanel {
         neljaSamaa = new javax.swing.JButton();
         pieniSuora = new javax.swing.JButton();
         suuriSuora = new javax.swing.JButton();
-        yatzy = new javax.swing.JButton();
-        sattuma = new javax.swing.JButton();
         taysiKasi = new javax.swing.JButton();
         ykkoset = new javax.swing.JButton();
         yksiPari = new javax.swing.JButton();
+        yatzy = new javax.swing.JButton();
+        sattuma = new javax.swing.JButton();
         noppienKuvat = new javax.swing.JPanel();
         noppa1 = new javax.swing.JButton();
         noppa2 = new javax.swing.JButton();
@@ -194,20 +210,6 @@ public class Piirtoalusta extends javax.swing.JPanel {
             }
         });
 
-        yatzy.setText("Yatzy");
-        yatzy.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                yatzyActionPerformed(evt);
-            }
-        });
-
-        sattuma.setText("Sattuma");
-        sattuma.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sattumaActionPerformed(evt);
-            }
-        });
-
         taysiKasi.setText("Täysi käsi");
         taysiKasi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,6 +231,20 @@ public class Piirtoalusta extends javax.swing.JPanel {
             }
         });
 
+        yatzy.setText("Yatzy");
+        yatzy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yatzyActionPerformed(evt);
+            }
+        });
+
+        sattuma.setText("Sattuma");
+        sattuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sattumaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout vaihtoehdotLayout = new javax.swing.GroupLayout(vaihtoehdot);
         vaihtoehdot.setLayout(vaihtoehdotLayout);
         vaihtoehdotLayout.setHorizontalGroup(
@@ -246,8 +262,8 @@ public class Piirtoalusta extends javax.swing.JPanel {
             .addComponent(pieniSuora, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(suuriSuora, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(taysiKasi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(sattuma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(yatzy, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sattuma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         vaihtoehdotLayout.setVerticalGroup(
             vaihtoehdotLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,9 +295,9 @@ public class Piirtoalusta extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(taysiKasi)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sattuma)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(yatzy)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sattuma)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -355,18 +371,19 @@ public class Piirtoalusta extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(40, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(taulukko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(kierros, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(vuorossa, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(vaihtoehdot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
+                        .addGap(65, 65, 65))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(183, 183, 183)
                         .addComponent(heita, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
                 .addComponent(noppienKuvat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -445,78 +462,78 @@ public class Piirtoalusta extends javax.swing.JPanel {
     }//GEN-LAST:event_noppa2ActionPerformed
 
     private void yksiPariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yksiPariActionPerformed
-        peli.lisaaPelaajallePisteita(8);
+        peli.lisaaPelaajallePisteita(8, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_yksiPariActionPerformed
 
     private void yatzyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yatzyActionPerformed
         // TODO add your handling code here:
-        peli.lisaaPelaajallePisteita(15);
+        peli.lisaaPelaajallePisteita(15, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_yatzyActionPerformed
 
     private void ykkosetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ykkosetActionPerformed
-        peli.lisaaPelaajallePisteita(0);
+        peli.lisaaPelaajallePisteita(0, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_ykkosetActionPerformed
 
     private void kakkosetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kakkosetActionPerformed
-        peli.lisaaPelaajallePisteita(1);
+        peli.lisaaPelaajallePisteita(1, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_kakkosetActionPerformed
 
     private void kolmosetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kolmosetActionPerformed
-        peli.lisaaPelaajallePisteita(2);
+        peli.lisaaPelaajallePisteita(2, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_kolmosetActionPerformed
 
     private void nelosetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nelosetActionPerformed
-        peli.lisaaPelaajallePisteita(3);
+        peli.lisaaPelaajallePisteita(3, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_nelosetActionPerformed
 
     private void vitosetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitosetActionPerformed
-        peli.lisaaPelaajallePisteita(4);
+        peli.lisaaPelaajallePisteita(4, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_vitosetActionPerformed
 
     private void kuutosetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kuutosetActionPerformed
-        peli.lisaaPelaajallePisteita(5);
+        peli.lisaaPelaajallePisteita(5, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_kuutosetActionPerformed
 
     private void kaksiPariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kaksiPariaActionPerformed
-        peli.lisaaPelaajallePisteita(9);
+        peli.lisaaPelaajallePisteita(9, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_kaksiPariaActionPerformed
 
     private void kolmeSamaaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kolmeSamaaActionPerformed
-        peli.lisaaPelaajallePisteita(10);
+        peli.lisaaPelaajallePisteita(10, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_kolmeSamaaActionPerformed
 
     private void neljaSamaaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_neljaSamaaActionPerformed
-        peli.lisaaPelaajallePisteita(11);
+        peli.lisaaPelaajallePisteita(11, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_neljaSamaaActionPerformed
 
     private void pieniSuoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pieniSuoraActionPerformed
-        peli.lisaaPelaajallePisteita(12);
+        peli.lisaaPelaajallePisteita(12, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_pieniSuoraActionPerformed
 
     private void suuriSuoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suuriSuoraActionPerformed
-        peli.lisaaPelaajallePisteita(13);
+        peli.lisaaPelaajallePisteita(13, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_suuriSuoraActionPerformed
 
     private void taysiKasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taysiKasiActionPerformed
-        peli.lisaaPelaajallePisteita(14);
+        peli.lisaaPelaajallePisteita(14, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_taysiKasiActionPerformed
 
     private void sattumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sattumaActionPerformed
-        peli.lisaaPelaajallePisteita(16);
+        peli.lisaaPelaajallePisteita(16, this.kayttis);
         paivitaTaulukko();
     }//GEN-LAST:event_sattumaActionPerformed
 
@@ -555,18 +572,15 @@ public class Piirtoalusta extends javax.swing.JPanel {
         } else {
             this.kayttis.lopputeksti();
         }
-
     }
 
+    /**
+     * Asettaa kierrostekstin ja vuorossa olevan pelaajan kertovan tekstin.
+     */
     private void asetaTekstit() {
         kierros.setText("Kierros:  " + peli.getKierros());
         vuorossa.setText("Vuorossa: Pelaaja  " + (peli.getVuoro() + 1));
     }
-
-//    private void asetaLopputeksti() {
-//        kierros.setText("Peli päättyi!");
-//        vuorossa.setText("Pelin voitti  " + peli.tarkistaVoittaja() + "!");
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton heita;
