@@ -27,7 +27,7 @@ public class ValikonKuuntelija implements ActionListener {
     }
 
     /**
-     * Kuuntelee, mikä pelaajien lukumäärä valitaan ja välittää tiedon peli
+     * Kuuntelee, mikä pelaajien lukumäärä valitaan ja välittää tiedon Peli
      * -luokalle. Luo pelikäyttöliittymän.
      *
      * @param e käyttäjän napin klikkaus.

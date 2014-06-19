@@ -91,5 +91,5 @@ Maanantai 16.6 klo 16-17
 Maanantai 16.6 klo 19-20
 - Pelin parantelua: valitessa käytetty noppayhdistelmä sekä pelin lopussa avautuvat ikkunat, noppien sijoittaminen samaan JPaneliin ulkoasun siistimiseksi. Taulukon parantaminen niin, että ilman pisteitä olevat kohdat ovat tyhjää (aiemmin nolla). Tuntikirjanpidon päivitys.
 
-Torstai 19.6 klo 17.30-21.00
+Torstai 19.6 klo 17.30-21.10
 - Testien kirjoittamista, JavaDoc:n täydentämistä, rakennekuvauksen ja käyttöohjeen kirjoitus, jar:n luominen ja testaus. Pit -raportin avulla testien parannusta. Dokumentaation tarkistusta ja täydennystä sekä pelin toiminnan testausta.

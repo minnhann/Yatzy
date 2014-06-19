@@ -55,7 +55,7 @@ public class Pelaaja {
     }
 
     /**
-     * Kasvatetaan pelaajan pisteitä
+     * Kasvatetaan pelaajan pisteitä.
      *
      * @param lisays lisättävien pisteiden määrä
      * @param pisteKohta kohta johon pisteet lisätään

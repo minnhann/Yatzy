@@ -3,7 +3,7 @@ package yatzy.domain;
 import java.util.Random;
 
 /**
- * Noppa sisältää jokaisen nopan arvon, nopan heitto -metodin sekä tiedon siitä,
+ * Noppa sisältää nopan arvon, nopan heitto -metodin sekä tiedon siitä,
  * onko noppa lukittu vai ei.
  *
  * @author minnhann
@@ -42,7 +42,7 @@ public class Noppa {
 
     /**
      * Jos noppa ei ole lukittu, heitetään sitä eli arvotaan uusi arvo väliltä
-     * 1-.
+     * 1-6.
      */
     public void heitaNoppaa() {
         if (this.lukittu) {
