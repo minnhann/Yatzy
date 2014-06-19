@@ -1,8 +1,8 @@
-Yatzyn rakennekuvaus:
+**Yatzyn rakennekuvaus:**
 
 Mainissa aloitetaan peli luomalla luokat Peli ja AlunKayttoliittyma. AlunKayttoliittym‰ss‰ luodaan valikko, josta valitaan, montako pelaajaa (1-4) peliin osallistuu. ValikonKuuntelija v‰litt‰‰ tiedon pelaajien lukum‰‰r‰st‰ Main:ssa luodulle Peli -luokalle.
 
-Peli -luokka on vastuussa pelin logiikasta. Peli luo viisi noppaa, Noppayhdistelmat -luokan sek‰ viisi pelaajaa. Peli -luokan vastuulla on noppien heitt‰minen, pelivuoron vaihtaminen, uusien noppien arpominen seuraavalle pelaajalle, pelin jatkumisen tarkistus, pisteiden lis‰‰minen pelaajalle sek‰ voittajan tarkistaminen pelin lopuksi.
+Peli -luokka on vastuussa pelin logiikasta. Peli luo viisi noppaa, NoppaYhdistelmat -luokan sek‰ viisi pelaajaa. Peli -luokan vastuulla on noppien heitt‰minen, pelivuoron vaihtaminen, uusien noppien arpominen seuraavalle pelaajalle, pelin jatkumisen tarkistus, pisteiden lis‰‰minen pelaajalle sek‰ voittajan tarkistaminen pelin lopuksi. N‰ihin toimintoihin Peli -luokka hyˆdynt‰‰ myˆs Pelaaja- ja Noppa -luokkien tarjoamia toiminnallisuuksia.
 
 Jokainen pelaaja sis‰lt‰‰ nimen, pisteet eriteltyn‰ noppayhdistelmitt‰in ja tiedon siit‰, mihin noppayhdistelmiin pelaaja on jo lis‰nnyt pisteit‰. Jokainen noppa sis‰lt‰‰ arvon, sek‰ tiedon siit‰, voiko noppaa heitt‰‰ vai ei.
 

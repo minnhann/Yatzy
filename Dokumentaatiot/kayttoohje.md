@@ -1,4 +1,4 @@
-K‰yttˆohje:
+**K‰yttˆohje:**
 
 Yatzy on viidell‰ nopalla pelattava peli. Peliin voi osallistua yhdest‰ nelj‰‰n pelaajaa. Pelin tarkoituksena on saada viitt‰ noppaa heitt‰m‰ll‰ mahdollisimman monta erilaista silm‰lukujen yhdistelm‰‰.
 
@@ -9,7 +9,7 @@ Pelaaja voi yritt‰‰ kutakin noppayhdistelm‰‰ vain kerran. Jos noppayhdistelm‰‰n 
 
 Erilaisia yhdistelmi‰ ovat seuraavat:
 
-Tulostaulukon kohdat 1-6:
+**Tulostaulukon kohdat 1-6:**
 
 - 1: tavoite on saada 1ñ5 kappaletta 1-silm‰lukuja.
 - 2: tavoite on saada 1ñ5 kappaletta 2-silm‰lukuja.
@@ -20,7 +20,7 @@ Tulostaulukon kohdat 1-6:
 
 Mik‰li pelaaja saa n‰ist‰ yhdistelmist‰ yhteens‰ v‰hint‰‰n 63 pistett‰, saa pelaaja 25 bonuspistett‰, jotka kirjataan pelaajalle kohtaan Bonus. Score pit‰‰ kirjaa n‰iden ensimm‰isen kuuden yhdistelm‰n pistesaldosta.
 
-Tulostaulukon alaosan yhdistelm‰t:
+**Tulostaulukon alaosan yhdistelm‰t:**
 
 - Yksi pari: kaksi kappaletta samaa silm‰lukua, esimerkiksi 1,2,3,5,5 = 5+5 = 10 pistett‰.
 - Kaksi paria: kaksi eri paria, esimerkiksi 1,2,2,6,6 = 2+2+6+6 = 16 pistett‰.
